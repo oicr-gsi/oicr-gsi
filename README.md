@@ -1,37 +1,33 @@
-## Welcome to GitHub Pages
+## Genome Sequence Informatics
 
-You can use the [editor on GitHub](https://github.com/oicr-gsi/oicr-gsi.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+The GSI team at [Ontario Institute for Cancer Research](https://oicr.on.ca) is a team of
+bioinformaticians and software developers that develop, maintain, and operate the core 
+analysis infrastructure, analyze genomic data produced at the institute, and support
+collaborators and researchers with their bioinformatics analysis.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+To support these activities, we have developed a large suite of open-source software
+that can be found under our Github organizations: [oicr-gsi](https://github.com/oicr-gsi)
+and [miso-lims](https://github.com/miso-lims).
 
-### Markdown
+### Laboratory tracking
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+To support our wetlab colleagues, we develop a variety of apps for laboratory tracking
+that also play nicely with downstream computational tools.
 
-```markdown
-Syntax highlighted code block
+* [MISO LIMS](https://github.com/miso-lims/miso-lims) : laboratory information management 
+  system specifically for sequencing facilities.
+* [RAMEN](https://github.com/miso-lims/ramen) : minimalist inventory control system for 
+  sequencing facilities
+* [Run Scanner](https://github.com/miso-lims/runscanner) : web server that monitors output 
+  from sequencing instruments (Illumina, PacBio and Oxford Nanopore) and reports their 
+  status and metrics
+  
+For more of our lab tracking software, visit the [miso-lims](https://github.com/miso-lims)
+Github organisation.
 
-# Header 1
-## Header 2
-### Header 3
+### Pipeline Infrastructure
 
-- Bulleted
-- List
+One of our main goals is to automate as much analysis, validation, and reporting as possible
+and we've built a suite of APIs and software to help.
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/oicr-gsi/oicr-gsi.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
