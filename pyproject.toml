@@ -3,5 +3,5 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "OICR GSI"
+name = "OICR-GSI"
 version = "v1.0"
