@@ -106,28 +106,6 @@ Grafana (6.7.0+)
 	Grafana is a graph-based monitoring tool used by Genomics to show trends in performance over time. It is not directly used in analysis.
 
 
-
-********************************
-Pipeline Software Components
-********************************
-
-The following tables outline details regarding the bioinformatics software used in the OICR pipeline.
-
-* WGTS Pipeline Version: |wgts-version|
-* TS Pipeline Version: |tar-version|
-* Shallow WG Pipeline Version: |shallow-version|
-* pWGS Pipeline Version: |pwgs-version|
-* Human Genome Reference Sequence Version: |hg38-version|
-	* Source: |hg38-ref-remote|
-	* Path to Human Genome Reference Sequence in fasta format: |hg38-ref-local| 
-* Exome interval file for callability: |callability-exome-intervals|
-* Whole-genome interval files for variant calling
-	* WGS: / https://bitbucket.oicr.on.ca/projects/GSI/repos/interval-files/browse/accredited/ALL.AS%2CCH%2CCM%2CNN%2CPG%2CSW%2CWG.hg38.bed
-* TS REVOLVE panel: |revolve-panel|
-
-
-
-
 ********************
 Updates and Upgrades
 ********************

@@ -12,7 +12,13 @@ BUILDDIR      = build
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile
+.PHONY: help Makefile update
+
+update:
+	@echo "SSH Agent started, adding key..."
+	eval "$$(ssh-agent -s)" && \
+	ssh-add ~/.ssh/id_rsa && \
+	$(SPHINXBUILD) -M html -t update-workflows "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

@@ -20,11 +20,12 @@ TAR Workflows and Software
 
 * Human Genome Reference: |hg38-version|
 	* Source: |hg38-ref-remote|
-	* Local fasta: |hg38-ref-local|
-* REVOLVE panel: |revolve-panel|
+	* Internal fasta: |hg38-ref-local|
+* REVOLVE panel: |revolve-panel-paper|
+   * Internal link: |revolve-panel-local|
 
 
 .. csv-table:: Targeted Sequencing Software
-   :file: TAR-software.csv
-   :widths: 30, 30, 30, 30
+   :file: software/tar.csv
+   :widths: 30, 30, 30, 30, 30
    :header-rows: 1

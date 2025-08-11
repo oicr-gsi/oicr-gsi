@@ -1,0 +1,6 @@
+bcl2fastq
+fastqc
+bwamem2
+dnaSeqQC
+ichorcna
+crosscheckFingerprintsCollector

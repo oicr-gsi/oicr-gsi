@@ -1,0 +1,10 @@
+bcl2fastq
+fastqc
+bwaMem
+bamMergePreprocessing
+dnaSeqQC
+bamqc
+consensusCruncher
+mutect2
+variantEffectPredictor
+crosscheckFingerprintsCollector

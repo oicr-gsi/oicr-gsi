@@ -1,0 +1,11 @@
+bcl2fastq
+bcl2barcode
+fastqc
+bwamem2
+bamqc
+dnaSeqQC
+callability
+wgsmetrics
+bamMergePreprocessing
+mrDetect
+crosscheckFingerprintsCollector

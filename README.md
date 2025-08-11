@@ -73,3 +73,35 @@ and we've built a suite of APIs and software to help.
 
 Contact us either through the Github issue tracker on any project or in our 
 [Gitter room](https://gitter.im/oicr-gsi/general).
+
+---------------------------------------------------------
+
+# Installing the documentation
+
+These docs are built with Python 3 and Sphinx.
+
+To install:
+```
+
+
+```
+
+To build:
+```
+make html
+```
+
+# Update the workflows for an assay
+
+1. Modify the list of workflows for the assay at [source/sops/software](source/sops/software).
+2. Run `make update`.
+  * This command will download gsi_workflows.json from OICR, which is produced by https://github.com/oicr-gsi/workflowTracker/blob/main/workflow_tracker.py. You need to be on the VPN and have SSH keys set up for this to work.
+  * if you have a passphrase on your ssh key, it will ask you for it
+  * it will then use the list of workflows for each assay, pull out the appropriate clinical workflow information, and stick it in a csv file in source/sops/software
+3. Commit the txt and generated csv files.
+
+You can then use the csv in RST using the `.. csv-table::` command.
+
+
+
+

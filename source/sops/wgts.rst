@@ -40,8 +40,8 @@ More information about the analysis pipelines is available in the ‘Procedure�
 
 
 .. csv-table:: Whole Genome Sequencing Software
-   :file: WGS-software.csv
-   :widths: 30, 30, 30, 30
+   :file: software/wgs.csv
+   :widths: 30, 30, 30, 30, 30
    :header-rows: 1
 
 
@@ -69,7 +69,7 @@ TS Workflows and Software
 More information about the analysis pipelines is available in the ‘Procedure’ section below.  Workflow parameterization is automated through the linked Shesmu configuration. This repository is restricted to authorized individuals.
 
 .. csv-table:: Whole Transcriptome Sequencing Software
-   :file: WTS-software.csv
-   :widths: 30, 30, 30, 30
+   :file: software/wts.csv
+   :widths: 30, 30, 30, 30, 30
    :header-rows: 1
 

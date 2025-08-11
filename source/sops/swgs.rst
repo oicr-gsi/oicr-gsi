@@ -25,6 +25,6 @@ sWGS Workflows and Software
 
 
 .. csv-table:: Shallow Whole Genome Sequencing Software
-   :file: sWGS-software.csv
-   :widths: 30, 30, 30, 30
+   :file: software/swgs.csv
+   :widths: 30, 30, 30, 30, 30
    :header-rows: 1

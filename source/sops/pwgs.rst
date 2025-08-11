@@ -29,6 +29,6 @@ pWGS Workflows and Software
 More information about the analysis pipelines is available in the ‘Procedure’ section below. Workflow parameterization is automated through the linked Shesmu configuration. This repository is restricted to authorized individuals.
 
 .. csv-table:: Plasma Whole Genome Sequencing Software
-   :file: pWGS-software.csv
-   :widths: 30, 30, 30, 30
+   :file: software/pwgs.csv
+   :widths: 30, 30, 30, 30, 30
    :header-rows: 1

@@ -1,0 +1,10 @@
+bcl2fastq
+bcl2barcode
+fastqc
+star
+starfusion
+rnaseqqc
+arriba
+mavis
+rsem
+crosscheckFingerprintsCollector
