@@ -200,3 +200,8 @@ More information about the analysis pipelines is available in the â€˜Procedureâ€
    :file: software/pwgs.csv
    :widths: 30, 30, 30, 30, 30
    :header-rows: 1
+
+
+
+   .. toctree::
+   :maxdepth: 2

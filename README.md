@@ -78,12 +78,11 @@ Contact us either through the Github issue tracker on any project or in our
 
 # Installing the documentation
 
-These docs are built with Python 3 and Sphinx.
+These docs are built with Python 3 and Sphinx. It's best to install and run within a python virtual environment.
 
 To install:
 ```
-
-
+python3 -m pip install -r requirements.txt
 ```
 
 To build:

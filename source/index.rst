@@ -41,4 +41,5 @@ Contact us through the Github issue tracker on any project.
    :caption: Software
 
    Requisition System <https://oicr-gsi.readthedocs.io/projects/requisition-system/stable>
+   infrastructure
 
