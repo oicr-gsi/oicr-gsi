@@ -24,12 +24,8 @@ Contact us through the Github issue tracker on any project.
    :caption: Informatics Pipelines
 
    sops/informatics-pipelines
-   sops/reference
-   sops/wgts
-   sops/tarseq
-   sops/swgs
-   sops/pwgs
-
+   sops/assays
+   
 .. toctree::
    :maxdepth: 2
    :caption: Data Review and Reporting
