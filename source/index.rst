@@ -31,6 +31,7 @@ Contact us through the Github issue tracker on any project.
    :caption: Data Review and Reporting
 
    sops/data-review-and-reporting
+   sops/wgts-report
 
 
 .. In most cases, we can use Intersphinx to link between the main project and the subproject
