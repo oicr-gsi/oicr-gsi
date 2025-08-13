@@ -1,6 +1,5 @@
-2.2. Creating Targeted Sequencing (TAR) Reports
+Creating Targeted Sequencing (TAR) Reports
 ===============================================
-
 
 a. TAR - Djerba INI configuration file assembly
 
@@ -8,115 +7,115 @@ First, set up the working directory as outlined in the following section: Settin
 
 The following information must be populated into the .ini file:
 
-Plugin
-Parameter
-Source
-Description
-Example
-tar_input_params_helper
-donor
-Dimsum
-LIMS ID comprising the study name and patient number
-REVOLVE_0001
+.. list-table:: Fields to fill in a TAR INI file
+	:widths: 20 20 20 20 20
+	:header-rows: 1
 
-project
-Dimsum
-Name of the project in provenance
-REVTAR
-
-study
-Req system
-Name of the study (acronym) in requisition system
-Re-VOLVE
-
-oncotree_code
-Req system
-OncoTree code
-HGSOC
-
-cbio_id
-shesmu
-(When not known, same as project
-REVOLVE
-
-patient_study_id
-Req system
-Patient study ID in requisition system
-REV-01-001
-
-tumour_id
-Dimsum
-ID of tumour sample
-REV-01-001_Pl
-
-normal_id
-Dimsum
-ID of blood sample
-REV-01-001_BC
-
-primary_cancer
-Req system
-Name of primary cancer
-High grade serous ovarian carcinoma
-
-site_of_biopsy
-Req system
-Site of biopsy/surgery (usually cfDNA)
-cfDNA
-
-sample_type
-Req system
-Sample type  (usually cfDNA)
-cfDNA
-
-known_variants
-Req system
-A known variant from previous genetic testing
-TP53 p.(D158*)
-
-requisition_approved
-Req system
-Date of first requisition approval by Tissue Portal staff in yyyy-mm-dd format
-2023-10-31
-
-requisition_id
-Req system
-Name of the requisition
-REVWGTS-P-861
-
-assay
-Req system
-The assay used (targeted sequencing assay, value is “TAR”)
-TAR
-provenance_helper
-sample_name_normal
-
-Dimsum - Full Depth Sequencings
-Default value is None
-REVOLVE_0001_01_LB01-02
-
-sample_name_tumour
-
-Dimsum - Full Depth Sequencings
-Default value is None
-REVOLVE_0001_04_LB01-02
-
-sample_name_aux
-Dimsum - Full Depth Sequencings
-Default value is None
-REVOLVE_0001_04_LB01-01
-tar.status
-
-copy_number_ctdna_detected
-Upon review of ichorCNA plot
-Default value is False
-False/True
-
-small_mutation_ctdna_detected
-Upon review of the reported SNVs
-Default value is False
-
-False/True
+	* 	- Plugin
+		- Parameter
+		- Source
+		- Description
+		- Example
+	*	- tar_input_params_helper
+		- donor
+		- Dimsum
+		- LIMS ID comprising the study name and patient number
+		- REVOLVE_0001
+	* 	-
+		- project
+		- Dimsum
+		- Name of the project in provenance
+		- REVTAR
+	* 	- 
+		- study
+		- Req system
+		- Name of the study (acronym) in requisition system
+		- Re-VOLVE
+	*	-
+		- oncotree_code
+		- Req system
+		- OncoTree code
+		- HGSOC
+	*	-
+		- cbio_id
+		- shesmu
+		- (When not known, same as project)
+		- REVOLVE
+	*	-
+		- patient_study_id
+		- Req system
+		- Patient study ID in requisition system
+		- REV-01-001
+	*	- 
+		- tumour_id
+		- Dimsum
+		- ID of tumour sample
+		- REV-01-001_Pl
+	*	- 
+		- normal_id
+		- Dimsum
+		- ID of blood sample
+		- REV-01-001_BC
+	*	-
+		- primary_cancer
+		- Req system
+		- Name of primary cancer
+		- High grade serous ovarian carcinoma
+	*	- 
+		- site_of_biopsy
+		- Req system
+		- Site of biopsy/surgery (usually cfDNA)
+		- cfDNA
+	*	-
+		- sample_type
+		- Req system
+		- Sample type  (usually cfDNA)
+		- cfDNA
+	*	- 
+		- known_variants
+		- Req system
+		- A known variant from previous genetic testing
+		- TP53 p.(D158*)
+	*	- 
+		- requisition_approved
+		- Req system
+		- Date of first requisition approval by Tissue Portal staff in yyyy-mm-dd format
+		- 2023-10-31
+	*	-
+		- requisition_id
+		- Req system
+		- Name of the requisition
+		- REVWGTS-P-861
+	*	-
+		- assay
+		- Req system
+		- The assay used (targeted sequencing assay, value is “TAR”)
+		- TAR
+	*	- provenance_helper
+		- sample_name_normal
+		- Dimsum - Full Depth Sequencings
+		- Default value is None
+		- REVOLVE_0001_01_LB01-02
+	*	- 
+		- sample_name_tumour
+		- Dimsum - Full Depth Sequencings
+		- Default value is None
+		- REVOLVE_0001_04_LB01-02
+	*	- 
+		- sample_name_aux
+		- Dimsum - Full Depth Sequencings
+		- Default value is None
+		- REVOLVE_0001_04_LB01-01
+	*	- tar.status
+		- copy_number_ctdna_detected
+		- Upon review of ichorCNA plot
+		- Default value is False
+		- False/True
+	*	-
+		- small_mutation_ctdna_detected
+		- Upon review of the reported SNVs
+		- Default value is False
+		- False/True
 
 
 a. Parameters from Dimsum
@@ -231,10 +230,12 @@ i. Review and confirm accuracy of non-PHI fields on interim report relative to c
 
 ii. Information regarding the tumour will be listed in the “Sample Information” section:
 iii. Review whizbam links for variants:
+
 * All variant calls must be viewed to gauge whether they are confident and thus reportable or an artifact and thus must be removed.
 * In general, if there are non-variant supporting reads in the normal, the variant is more likely to be an artifact. 
 
 * Examples of variants to keep
+
 Example 1:
 
 
@@ -253,6 +254,7 @@ As the frame-shift insertion has no supporting reads in the normal, it is likely
 
 
 * Examples of variants to remove
+
 Example 1:
 
 
@@ -271,6 +273,7 @@ According to data_mutations_extended_oncogenic.txt, this call is actually a fram
 
 
 iv. Check provenance for the IchorCNA plots file: $(sample_name_aux)_plots.tar.gz. After extraction, examine the copy number solution in $(sample_name_aux)_genomeWide.pdf. If the tumour fraction is less than 10%, confirm that the plot is centered at 0. If the tumour fraction is greater than 10%, confirm that the plot is centered at 0 and determine if the high tumour fraction is being driven by potentially artifact chromosomal regions. The regions that correspond to recurrent artifacts commonly found in healthy controls (i.e. likely false positives) are: 1p, 10q, 17, 19, and 22.
+
 ▪ Example of a plot centered at 0 (it will appear blue):
 
 ▪ Example of a plot not centered at 0 (it will appear brown):
@@ -285,29 +288,34 @@ iv. Check provenance for the IchorCNA plots file: $(sample_name_aux)_plots.tar.g
 
 v. After reviewing both the copy number variants and the small mutations, the parameters in [tar.status] in the config.ini may need to be adjusted.
 ▪ [tar.status]
+
 copy_number_ctdna_detected = False
 small_mutation_ctdna_detected = False
 Both parameters automatically default to False.
 
 
 After reviewing the SNVs and purity/CNVs, adjust the parameters as follows:
+
 * copy_number_ctdna_detected = True if the purity is ≥ 10%
 * small_mutation_ctdna_detected = True if there are high confidence SNVs present 
-Once done, re-generate the report to ensure changes to [tar.status] are rendered correctly:
-$ djerba.py report -i config.ini -o report/
+
+Once done, re-generate the report to ensure changes to [tar.status] are rendered correctly::
+	$ djerba.py report -i config.ini -o report/
 
 For example, for a report with copy_number_ctdna_detected = True and 	 small_mutation_ctdna_detected = False, the output will be:
 
 
 
-vi. Once the variants to remove have been identified, remove them from djerba_report.json. It is helpful to use json tool to make editing the json easier.
+vi. Once the variants to remove have been identified, remove them from djerba_report.json. It is helpful to use json tool to make editing the json easier::
 
-$ cat djerba_report.json | python3 -m json.tool > report/djerba_report_machine.pretty.json
-$ vim report/djerba_report_machine.pretty.json
-$ djerba.py render -j report/djerba_report_machine.pretty.json -o report -p  
+	$ cat djerba_report.json | python3 -m json.tool > report/djerba_report_machine.pretty.json
+	$ vim report/djerba_report_machine.pretty.json
+	$ djerba.py render -j report/djerba_report_machine.pretty.json -o report -p  
 
 Note: For all follow-up cases, ensure that the status is consistent with the previous submission. If the case is positive—either due to a tumor fraction >10% or the presence of a reported SNV—be sure to double-check the original ichorCNA plot and confirm the variants reported in the initial submission.
+
 It’s not uncommon for the follow-up report to show new variants or higher tumor fraction; this can occur if the original sample was below our limit of detection. In such cases, review the old data in IGV to see if any supporting reads were present, and examine the ichorCNA plot for amplifications that may align with the current findings. 
+
 vii. If prior knowledge of previous sequencing results or biomarkers is known, review the relevant sections of the report to confirm and note abnormalities:
 
 Abnormality
@@ -331,16 +339,21 @@ Prior sequencing results are not confirmed
 NOTE: If any discrepancy is noted, the sample should be marked as failed in Dimsum according to the QM-036 Quality Control Approval Procedure SOP. The report is to be regenerated with the FAIL flag as in section 2.2e.
 
 viii. Review the Small Mutations (SNVs/INDELs) section of the report
+
 ▪ SNVs and INDELs are reported according to the following filtering criteria:
 
 Filter
 Threshold
 Variant Allele Frequency (VAF)
+
 * ≥ 1%
 
 Supporting Alternate Reads
+
 * ≥ 3 reads
+
 OncoKB
+
 * All level 1-4, R variants which pass the above criteria
 * All “Oncogenic”, “Likely Oncogenic” and “Predicted Oncogenic” alterations which pass the above criteria
 
@@ -349,6 +362,7 @@ OncoKB
 ▪ Dinucleotide substitutions which are represented as two individual mutations are to be merged. Merged variants should be recorded in a new file named data_mutations_merged.txt. Copy both original individual annotations to this file, along with a third record of the final merged variant. To perform this merge, please follow this step-by-step procedure in the “Merging and Annotating Mutations Representing the Same Event” document on CGI:How-to wiki page.
 
 ix. Generate an interpretation statement based on the findings from above. For samples flagged as follow-up, an additional statement is included to comment on the shared and/or exclusive variants relative to prior sequencing results. 
+
 ▪ Final statement is recorded in a TXT file named results_summary.txt
 ▪ Use the following template as an example:
 
@@ -379,9 +393,13 @@ Edit results_summary.txt and then update the genomic summary text in the report 
 
 TAR - Updating QCs
 The draft clinical report is accompanied by a QC report, which documents the QC audit trail for the sample in question. The report must be generated after MISO has been updated with informatics QC results. The sample QC section has one metric to be reviewed by CGI staff: the ichorCNA plot. Review the ichorCNA plot as detailed in the section “TAR - Interpreting the Interim Report” above.
+
 1. If the sample passes QCs as detailed in the QM. Quality Control and Calibration Procedures, then under “QCs” for the case in MISO, enter PASS under the types “Informatics Review” and “Draft Clinical Report”
+
 Once updated in Dimsum, the QC report may be generated using the “case report” button in Dimsum. Under “Assay”, click on the assay (ex. REVOLVE - cfDNA+BC). Then, at the top right of the page, click on the green “QC Report'' button. On the new page, in the top right, click on the green “Print” button to save to pdf for uploading to the requisition system. Investigate any warnings or errors in the QC report.
+
 TAR - Example Djerba TAR session
+
 The following is an example sequence of commands used to generate a clinical report with Djerba. It is intended as a guide to CGI staff for report generation. The commands are for illustration only, not a fixed script to be followed. The start of each command is prefixed with $, and comments are prefixed with #::
 
 	$ ssh ugehn.hpc

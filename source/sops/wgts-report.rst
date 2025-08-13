@@ -123,17 +123,13 @@ Output filename is of the form ``${TUMOUR_ID}+${version}.html`` in the report di
 
 .. _wgts-ireport-review:
 
-Interim Report Review and Interpretation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Proceed with review of all informatics results using the HTML output. In this step, QC gates are checked and biomarker calls are manually reviewed for accuracy.  
 
 Review Tumour Quality
-*********************
+~~~~~~~~~~~~~~~~~~~~~~
 
 In the “Sample Information” section, review sample quality information for the tumour. 
 
-CGI staff are responsible for verification of two quality metrics - Callability and Estimated Cancer Cell Content:
+CGI staff are responsible for verification of two quality metrics - Callability and Estimated Cancer Cell Content. If a case does not pass either metric, it cannot continue with the assay and must be failed.
 
 
 Callability
@@ -201,11 +197,18 @@ If you still don’t like your solution, PURPLE can be relaunched manually, spec
 
 .. _purple.wdl: https://github.com/oicr-gsi/purple/blob/main/purple.wdl 
 
+
+Interim Report Review and Interpretation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Proceed with review of all informatics results using the HTML output. In this step, biomarker calls are manually reviewed in order to write the genome interpretation statement later.  
+
+
 Genomic Landscape
 ****************************************************
 
-a. Note the percentile which the tumour mutation burden (TMB) is in, for the given tumour type (ie. refer to expected median TMB for the given tumour type in TCGA if it exists).
-b. Evaluate actionable biomarkers for reporting: Oncokb reports TMB > 10 and MSI-H, and NCCN reports HR-D, as actionable. 
+#.  Note the percentile which the tumour mutation burden (TMB) is in, for the given tumour type. Refer to expected median TMB for the given tumour type in TCGA if it exists.
+#. Evaluate actionable biomarkers for reporting: Oncokb reports TMB > 10 and MSI-H, and NCCN reports HR-D, as actionable. 
 
 * Large confidence intervals around the MSI score (spanning several result-interpretations, for example both MSI and MSS) are to be considered inconclusive. Inconclusive samples may be sent for PCR confirmatory testing.
 * If HRD or MSI are positive, look for a somatic driver mutation: BRCA1, BRCA2, RAD51C, RAD51D, or PALB2 for HRD and MLH1, MSH2, MSH6, or PMS2 for MSI. If no mutations are reported within these genes, consider manually verifying filtered calls in IGV. There won’t always be one: the mutation may be germline or the phenotype may arise from methylation, among other explanations.

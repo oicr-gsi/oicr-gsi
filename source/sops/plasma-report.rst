@@ -8,6 +8,7 @@ To create a pWGS report, we run Djerba with two pWGS plugins enabled:
 pwgs.sample performs sample identification and QC checks, 
 pwgs.analysis performs analysis of mrdetect workflow outputs 
 
+
 The pwgs plugins require the following information to be populated into the .ini file:
 
 Plugin
