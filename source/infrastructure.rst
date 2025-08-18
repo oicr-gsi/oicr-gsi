@@ -79,6 +79,8 @@ Vidarr is an analysis provenance tracking server. It schedules workflows using a
 
 Workflows are written in the WDL language and contain all the commands for running bioinformatics software (including fastq generation, alignment, variant calling, annotation and generation of QC metrics; see :numref:`wgs-pipeline` and :numref:`wts-pipeline` for flowchart of WGS and RNA bioinformatics workflows, respectively. See next section for details of the software components within WDLworkflows). Workflow runs and all associated files are tracked and recorded in Vidarr. This information is exposed as analysis provenance and used by the Provenance Client and Shesmu for automation.
 
+.. _whizbam_infra:
+
 Whizbam
 -------
 

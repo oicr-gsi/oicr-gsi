@@ -3,7 +3,7 @@ Informatics Overview
 *********************
 
 .. note:: 
-	This document is part of the OICR Genomics Quality Management System : TM-014 Informatics Pipelines
+	This document is part of the OICR Genomics Quality Management System : `TM-014 Informatics Pipelines🔒`_
 
 The informatics pipeline consists of a combination of automated production software and manually executed scripts. A diagram illustrating the flow of data through individual components is shown in :numref:`high-level-overview`. More information about specific systems is available below.
 
@@ -16,6 +16,8 @@ This SOP describes steps 1 through 5. Steps 6 and 7 are described in TM. Data Re
 5. Once analysis is completed, ETL is responsible for retrieving, and subsequently transforming workflows with quality control information for display via Dashi and Dimsum. 
 6. Additionally, an in-house application named Djerba (https://github.com/oicr-gsi/djerba) retrieves and transforms data containing mutation, copy number, structural variation, and expression calls into a tabular format for review by Cancer Genome Interpreters. This information is subsequently processed by Djerba to generate a PDF clinical report.
 7. The final step in the process is digital signing and upload of the PDF to the sample requisition system.
+
+.. _TM-014 Informatics Pipelines🔒: https://oicr.sharepoint.com/:w:/r/sites/OGQM/SOPs/Informatics%20Pipelines.docx?d=wc3a852b0516044ada1b6453bd74b26ce&csf=1&web=1&e=AovWyy
 
 .. _assay: reference.html
 

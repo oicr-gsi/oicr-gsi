@@ -1,69 +1,165 @@
-#########
-Tips
-#########
+#################
+Reporting Tips
+#################
 
-.. _purple-range:
+.. _alt-solution:
 
-Review PURPLE range for cell content solution
-+++++++++++++++++++++++++++++++++++++++++++++
+Alternative PURPLE solutions
+###############################
 
-To review solutions, open the file ``purple.range.png`` in the working directory. The contour plot shows the relative likelihood for different purity/ploidy solutions (based on PURPLE’s penalty scoring). PURPLE’s favored solution is shown at the intersection of the dotted line. Highly probable solutions have low scores, and appear as black or dark blue areas (or “peaks” on the contour plot). Less preferable plots have multiple peaks close together, with little distinction between them. Further guidelines for picking alternate solutions are outlined in the following table:
+When an alternate solution is better:
 
-.. list-table:: Purple plots
-   :widths: 50 20 30
-   :header-rows: 1
+#. Open purple.range.txt and scroll down until you find the top scoring solution in the area of the plot of your alternate solution. If you are hesitating whether to consider an alternate solution, check how far down the alternate solution is from the top. The closer the solution is to the top (i.e. the lower the score), the more confident you can be about selecting that alternate solution.
+#. Search file_provenance for the alternate solutions directory::
 
-   * - Plot
-     - Action
-     - Guidance/Reasoning
-   * - |good-cell-img|
-     - None
-     - |good-cell-txt|
-   * - |alt-cell-img|
-     - Consider an Alternate solution
-     - |alt-cell-txt|
-   * - |bad-cell-img|
-     - | Fail the Sample
-     - |bad-cell-txt|
+	file_provenance=/scratch2/groups/gsi/production/vidarr/vidarr_files_report_latest.tsv.gz
+	zcat $file_provenance | grep ${donor} | grep .purple_alternates.zip | cut -f 1,2,8,14,19,31,47
 
-.. |good-cell-img| image:: images/good-cell.png
-.. |good-cell-txt| replace:: Both plot and solution look good.
-.. |alt-cell-img| image:: images/alt-cell.png
-.. |alt-cell-txt| replace:: There seems to be a viable alternate solution around 75% / N=2 which may rescue this sample from failing otherwise. See instructions below to launch runs of purple with alternate cellularity/ploidy combinations. 
-.. |bad-cell-img| image:: images/bad-cell.png
-.. |bad-cell-txt| replace:: While some solutions are above 30% cellularity, this nebulous cloud shape on a mostly blue background suggests the algorithm had trouble prioritizing solutions and the likely true solution is below 30%.
+#. Unzip the alternate directory and manually assign the purple outputs in the .ini. Solutions directories are labeled according to their ploidy; if your favoured solution has a ploidy between 1-2, choose ``sol1``; between 2-3, choose ``sol2`` etc. Specify your solution in the INI using::
 
-.. _purple-segmentQC:
+	[wgts.cnv_purple]
+	purple_zip = ${NAME}.purple.zip
 
-Review PURPLE Segment QC for fit
-+++++++++++++++++++++++++++++++++++
-
-Next, evaluate the fit of the solution to the data by opening the file ``purple.segment_QC.png``. The plot depicts the likelihood (as a penalty) of minor and major allele copy numbers based on the chosen cellularity/ploidy solution and the observed data. A heatmap showing which copy number regions have a high probability of containing segments, according to the predictive model generated, is overlaid by the observed segments (plotted as circles representing the size of the segment in number of supporting variants). 
-
-Preferred solutions have a close match between observation and prediction; that is, most segments occur in red/yellow regions (high probability), not white regions (low probability). It is ideal but not necessary for all segments to occur in high-probability regions of a solution. 
+#. Relaunch Djerba
 
 
-.. list-table:: Evaluating the fit of the segments of a chosen cellularity/ploidy solution
-	:widths: 50 20 30
-	:header-rows: 1 
+If you still don’t like your solution, PURPLE can be relaunched manually, specifying the wanted purity and ploidy in the ``workflow.json`` for deployment in cromwell. Alternate solutions can be launched according to the following procedure
 
-	* - Plot
-	  - Action
-	  - Guidance/Reasoning
-	* - |good-ploidy-img|
-	  - None
-	  - |good-ploidy-txt|
-	* - |alt-ploidy-img|
-	  - Consider an Alternate solution
-	  - |alt-ploidy-txt|
-	* - |bad-ploidy-img|
-	  - Fail the Sample
-	  - |bad-ploidy-txt|
+#. Open purple.alternate.json and change the min/max purity/ploidy parameters in the .json to match with your desired solution
+#. Launch cromwell on the HPC with `purple.wdl`_ using the following::
 
-.. |good-ploidy-img| image:: images/good-ploidy.png
-.. |good-ploidy-txt| replace:: Fit looks good
-.. |alt-ploidy-img| image:: images/alt-ploidy.png
-.. |alt-ploidy-txt| replace:: Large distance between clusters of alleles will lead to an unlikely CNV track
-.. |bad-ploidy-img| image:: images/bad-ploidy.png
-.. |bad-ploidy-txt| replace:: This sample appears to be hypersegmented. While this can occasionally be a biological phenomenon (like HRD), it is more likely that this sample is of low purity and that segments were not merged in PURPLE because breakends were missed since their structural variants were at low VAF. Check the mutations list in case the high segmentation can be explained by a DNA repair deficiency (eg. BRCA1 knockout).
+	module load cromwell
+	java -jar $CROMWELL_ROOT/share/cromwell.jar submit purple.wdl \
+	 --inputs purple.alternate.json \
+	 --host http://cromwell-dev-2.hpc.oicr.on.ca:8000 >purple.alternate.txt
+
+#. Retrieve the workflow outputs from the `Cromwell workflow manager`_ using the workflow ID in purple.alternate.txt. 
+#. Complete the procedure as in `alt-solution`_ above.
+
+.. _purple.wdl: https://github.com/oicr-gsi/purple/blob/main/purple.wdl
+.. _Cromwell workflow manager :  http://cromwell-job-manager-dev.gsi.oicr.on.ca:4202/jobs
+
+
+.. _navigate-dimsum:
+
+Navigating Dimsum
+########################
+
+#. Login using your OICR username and LDAP at https://dimsum.gsi.oicr.on.ca/
+#. On the QC dashboard, scroll down to the case of interest, or go to filter -> donor -> type in the donor (ex. REVOLVE_0001).
+#. Click on the case to see case details
+
+.. _navigate-reqsys:
+
+Navigating the Requisition System
+##################################
+
+#. Login using your OICR username and LDAP at https://requisition.genomics.oicr.on.ca/ 
+#. From the dashboard submissions tab, navigate to the project.
+
+	.. image:: images/reqsys1.png
+
+#. Find the sample in the requisition system, click “View”, and scroll down to view information.
+	
+	#. Refer to Dimsum to find the “Requisition ID” within the requisition system, eg. `PANX_1608`_ -> PRSPR-427
+
+	.. image:: images/reqsys2.png
+
+.. _PANX_1608: https://dimsum.gsi.oicr.on.ca/donors/PANX_1608
+
+
+.. _tar-whizbam-examples:
+
+
+Interpreting variants in Whizbam
+#################################
+
+These are examples from targeted reports of true and false positives in :ref:`whizbam_infra` (IGV).
+
+Example 1:
+
+.. image:: images/tar1.png
+	:width: 100%
+
+According to ``data_mutations_extended_oncogenic.txt``, this is a G -> T nonsense mutation. As this call has many supporting reads in the tumour but not in the normal, it is a confident call and should be kept for reporting.
+
+Example 2:
+
+.. image:: images/tar2.png
+	:width: 100%
+
+
+According to ``data_mutations_extended_oncogenic.txt``, this is a frame-shift insertion. A frame-shift insertion is represented by a short purple line. This insertion can be better seen when scrolling down:
+
+.. image:: images/tar3.png
+	:width: 100%
+
+As the frame-shift insertion has no supporting reads in the normal, it is likely a confident call and should be kept for reporting.
+
+
+* Examples of variants to remove
+
+Example 1:
+
+.. image:: images/tar4.png
+	:width: 100%
+
+Upon initial review, this looks like a A -> T SNP call, as this variant does not have supporting reads in the normal. However, according to ``data_mutations_extended_oncogenic.txt``, this call is actually a frame-shift deletion. Indeed, when scrolling down, this frame-shift deletion is visible:
+
+.. image:: images/tar5.png
+	:width: 100%
+
+As this frame-shift deletion has supporting reads in the normal, it is likely to be an artifact and must be removed.
+
+Example 2:
+
+.. image:: images/tar6.png
+	:width: 100%
+
+According to data_mutations_extended_oncogenic.txt, this call is actually a frame-shift insertion. A frame-shift insertion is represented by a short purple line (such as on the right of the above screenshot). As there are no short purple lines present in the tumour, this variant does not pass QC and must be removed. 
+
+
+
+
+.. _tar-ichor-examples:
+
+Interpreting ichorCNA CNV plots
+################################
+
+These are examples of CNV plots from ichorCNA for targeted reports.
+
+* Example of a plot centered at 0 (it will appear blue):
+
+.. image:: images/ichor1.png
+	:width: 100%
+
+* Example of a plot not centered at 0 (it will appear brown):
+
+.. image:: images/ichor2.png
+	:width: 100%
+
+* Example of a high purity solution likely driven by potentially artifact chromosomal regions (ex. 1p, 17, 22):
+
+.. image:: images/ichor3.png
+	:width: 100%
+
+* Example of a high purity solution which is likely correct:
+
+.. image:: images/ichor4.png
+	:width: 100%
+
+
+.. _json-tips:
+
+Working with JSON and Djerba
+##############################
+
+It is helpful to use json tools to make editing the Djerba json easier::
+
+	$ cat djerba_report.json | python3 -m json.tool > report/djerba_report_machine.pretty.json
+	$ vim report/djerba_report_machine.pretty.json
+	$ djerba.py render -j report/djerba_report_machine.pretty.json -o report -p  
+
+
+
 
