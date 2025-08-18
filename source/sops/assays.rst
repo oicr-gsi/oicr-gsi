@@ -23,6 +23,21 @@ Exome interval file for callability Agilent SureSelect Exome V6     |callability
 TS REVOLVE revolve-panel            |revolve-panel-paper|           |revolve-panel-remote|          |revolve-panel-local|
 =================================== =============================== =============================== =========================
 
+.. |wgts-version| replace:: 6.0
+.. |tar-version| replace:: 6.0
+.. |shallow-version| replace:: 3.0
+.. |pwgs-version| replace:: 3.0
+.. |hg38-version| replace:: hg38-p12
+.. |hg38-ref-remote| replace:: `UCSC <https://hgdownload.cse.ucsc.edu/goldenpath/hg38/bigZips/p12/>`__
+.. |hg38-ref-local| replace:: `Modulator </.mounts/labs/gsi/modulator/sw/data/hg38-p12/hg38_random.fa>`__
+.. |revolve-panel-paper| replace:: `Paper <https://doi.org/10.1158/1078-0432.CCR-23-0797>`__
+.. |revolve-panel-local| replace:: `Interval-files <https://bitbucket.oicr.on.ca/projects/GSI/repos/interval-files/browse/accredited/EVOLVE-CHARM.TS.hg38.bed>`__
+.. |revolve-panel-remote| replace:: `Excel file <https://pmc.ncbi.nlm.nih.gov/articles/instance/10502468/bin/ccr-23-0797_supplementary_table_s3_suppts3.xlsx>`__
+.. |callability-exome-local| replace:: `Interval-files <https://bitbucket.oicr.on.ca/projects/GSI/repos/interval-files/browse/accredited/Agilent_SureSelect_v6.EX.hg38.alias>`__
+.. |callability-exome-remote| replace:: `UCSC <https://genome.ucsc.edu/cgi-bin/hgTables?db=hg38&hgta_group=map&hgta_track=exomeProbesets&hgta_table=Agilent_Human_Exon_V6_Regions&hgta_doSchema=describe+table+schema>`__
+.. |wgs-intervals| replace:: `Interval-files <https://bitbucket.oicr.on.ca/projects/GSI/repos/interval-files/browse/accredited/ALL.AS%2CCH%2CCM%2CNN%2CPG%2CSW%2CWG.hg38.bed>`__
+
+
 .. _wgts-pipeline:
 
 
