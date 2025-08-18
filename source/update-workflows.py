@@ -109,7 +109,7 @@ else:
     get_gsi_workflows()
 
 
-for filename in glob.glob('sops/software/*.txt'):
+for filename in glob.glob('informatics-pipelines/software/*.txt'):
     name = filename.replace('.txt', '')
 
     # Read the contents of the .txt file and create a JSON array
@@ -119,7 +119,7 @@ for filename in glob.glob('sops/software/*.txt'):
     command = [
         'jq', '-r', 
         '--argjson', 'names', json.dumps(names_list), 
-        '-f', 'sops/software/jqmy.jq', 
+        '-f', 'informatics-pipelines/software/jqmy.jq', 
         gsi_workflows
     ]
     
