@@ -11,8 +11,6 @@ GSI is a team of bioinformaticians and software developers at `Ontario Institute
 .. _miso-lims : https://github.com/miso-lims
 
 
-:doc:`reqsystem:intro`
-
 Contact us
 -----------
 
@@ -20,14 +18,14 @@ Contact us through the Github issue tracker on any project.
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Informatics Pipelines
 
    sops/informatics-pipelines
    sops/assays
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Data Review and Reporting
 
    sops/data-review-and-reporting
@@ -38,7 +36,7 @@ Contact us through the Github issue tracker on any project.
 .. But not in toctree. For some reason.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Software
 
    Requisition System <https://oicr-gsi.readthedocs.io/projects/requisition-system/stable>
