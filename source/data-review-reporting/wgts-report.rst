@@ -373,6 +373,10 @@ Draft Report Generation
 
 Edit the generated interpretation statement if needed and save it under ``results_summary.txt`` in the report subdirectory of the working directory created in :ref:`djerba-working-dir`. The interpretation statement may include simple HTML tags such as hyperlinks, bold/italic formatting, etc.
 
+.. note::
+
+   ⚠️ Blurbomatic is not yet configured to generate result summaries for the TAR assay or for failed reports of any assay type. 
+
 Use the following template as an example and refer to `how to write a Genome Interpretive Statement🔒`_ for more details:
 
 .. _blurbomatic: https://github.com/oicr-gsi/blurbomatic

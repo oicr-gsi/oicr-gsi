@@ -44,7 +44,7 @@ Before Starting
 
 Informatics pipelines must have completed as described in the :doc:`/informatics-pipelines/informatics-pipelines` SOP.
 
-When informatics pipelines have completed, a Jira ticket will be created in the CGI Jira queue and assigned to a CGI staff member by the clinical reporting lead. This ticket is specific for CGI staff and indicates when all workflows for a requisition have completed. The ticket is meant to be a trigger for CGI staff to begin with this SOP, and contains the information needed to proceed with the procedure. If the clinical reporting lead is unavailable, delegation responsibility falls to the CGI Manager, then the Director, GSI. This begins the Data Review and Reporting Procedure.
+The CGI clinical report lead reviews pipeline status in Shesmu and updates the agenda accordingly. Samples that have completed pipeline analysis will then be assigned to a CGI staff member by the clinical reporting lead. If the clinical reporting lead is unavailable, delegation responsibility falls to the CGI Manager, then the Director, GSI. This begins the Data Review and Reporting Procedure.
 
 .. _djerba-working-dir:
 
