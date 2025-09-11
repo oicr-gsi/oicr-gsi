@@ -15,7 +15,7 @@ When an alternate solution is better:
 	zcat $file_provenance | grep ${donor} | grep .purple_alternates.zip | cut -f 1,2,8,14,19,31,47
 
 #. Copy the alternate solution zip file to your working directory.  
-   Use the `purple_summarize_alts.py script in djerba_prototypes <https://github.com/oicr-gsi/djerba_prototypes/blob/main/scripts>`_  
+   Use the purple_summarize_alts.py script in `djerba_prototypes <https://github.com/oicr-gsi/djerba_prototypes/blob/main/scripts>`_  
    to see the potential purity and ploidy in each solution::
 
       python3 ~/git/djerba_prototypes/scripts/purple_summarize_alts.py .
