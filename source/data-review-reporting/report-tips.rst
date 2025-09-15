@@ -166,5 +166,10 @@ It is helpful to use json tools to make editing the Djerba json easier::
 	$ djerba.py render -j report/djerba_report_machine.pretty.json -o report -p  
 
 
++----------------+----------------------+
+| **Change Log** | `Github commit log`_ |
++----------------+----------------------+
+
+.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/data-review-reporting/report-tips.rst
 
 

@@ -17,6 +17,7 @@ Contact us
 Contact us through the Github issue tracker on any project.
 
 
+
 .. toctree::
    :maxdepth: 1
    :caption: Informatics Pipelines
@@ -41,4 +42,10 @@ Contact us through the Github issue tracker on any project.
 
    Requisition System <https://oicr-gsi.readthedocs.io/projects/requisition-system/stable>
    infrastructure
+
++----------------+----------------------+
+| **Change Log** | `Github commit log`_ |
++----------------+----------------------+
+
+.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/index.rst
 

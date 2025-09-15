@@ -201,6 +201,8 @@ Amended reports have:
         .. image:: images/amreport4.png
 
 
+.. note :: In the case that the contents of the amended report are identical to the original report, the amended report does not need to be uploaded to the requisition system. Instead, document the comparison in a ticket or CAPA and notify the requisitioner that the case was reanalyzed without a change to results.
+
 When amendments are necessary, the following steps must be followed, led by the CGI manager:
 
 #. Contact the requisitioner 
@@ -454,6 +456,13 @@ Analytical Methodology Changes
 1. Analytical methodology changes will follow the processes laid out in QM. Continuous Improvement Plan and QM. Computer System Maintenance.
 2. Unless a new requisition is submitted, OICR Genomics will not issue new updates to previously signed-out clinical genomic reports. 
 3. If OICR Genomics changes its analytical methodology to correct major errors or oversights that significantly impact the final genomic report, that information will be communicated to both previous and current clients. Affected clients will be emailed to inform them of the change and any effect this may have on their existing or future genomic reports.
+
+
++----------------+----------------------+
+| **Change Log** | `Github commit log`_ |
++----------------+----------------------+
+
+.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/data-review-reporting/data-review-and-reporting.rst
 
 
 

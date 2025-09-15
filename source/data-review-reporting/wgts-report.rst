@@ -456,3 +456,8 @@ The following is an example sequence of commands used to generate a clinical rep
 	$ nano report/results_summary.txt
 	$ djerba.py update -s report/results_summary.txt -j report/report.json -o report/ -p
 
++----------------+----------------------+
+| **Change Log** | `Github commit log`_ |
++----------------+----------------------+
+
+.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/data-review-reporting/wgts-report.rst

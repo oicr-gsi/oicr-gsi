@@ -127,3 +127,10 @@ OICR’s high throughput computing cluster uses Univa_. Software packages are in
 
 .. toctree::
    :maxdepth: 2
+
+
++----------------+----------------------+
+| **Change Log** | `Github commit log`_ |
++----------------+----------------------+
+
+.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/infrastructure.rst

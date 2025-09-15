@@ -201,7 +201,7 @@ Most results are reviewed within the interim report. Results reviewed by other m
 
 .. _review the ichorCNA plot:
 
-#. Check provenance for the IchorCNA plots file: ``$(sample_name_aux)_plots.tar.gz``. After extraction, examine the copy number solution in ``$(sample_name_aux)_genomeWide.pdf``. If the tumour fraction is less than 10%, confirm that the plot is centered at 0. If the tumour fraction is greater than 10%, confirm that the plot is centered at 0 and determine if the high tumour fraction is being driven by potentially artifact chromosomal regions. The regions that correspond to recurrent artifacts commonly found in healthy controls (i.e. likely false positives) are: 1p, 10q, 17, 19, and 22.
+#. Examine the copy number solution in ``report/$(sample_name_aux)_genomeWide.pdf``. If the tumour fraction is less than 10%, confirm that the plot is centered at 0. If the tumour fraction is greater than 10%, confirm that the plot is centered at 0 and determine if the high tumour fraction is being driven by potentially artifact chromosomal regions. The regions that correspond to recurrent artifacts commonly found in healthy controls (i.e. likely false positives) are: 1p, 10q, 17, 19, and 22.
 
 	* Examples: :ref:`tar-ichor-examples`
 	* If it is determined that the high purity is likely driven by potentially artifact chromosomal regions, change the estimated tumour fraction to <10%. Copy number variants must be removed.
@@ -362,4 +362,11 @@ The following is an example sequence of commands used to generate a clinical rep
 	# update the ctDNA plugin status from "Not Detected” to “Detected” if needed
 	# update the genomic summary
 	$ djerba.py update -s report/results_summary.txt -j report/report.json -o report/ -p
+
+
++----------------+----------------------+
+| **Change Log** | `Github commit log`_ |
++----------------+----------------------+
+
+.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/data-review-reporting/tar-report.rst
 
