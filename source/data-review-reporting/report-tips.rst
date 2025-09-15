@@ -9,11 +9,16 @@ Alternative PURPLE solutions
 
 When an alternate solution is better:
 
-#. Open purple.range.txt and scroll down until you find the top scoring solution in the area of the plot of your alternate solution. If you are hesitating whether to consider an alternate solution, check how far down the alternate solution is from the top. The closer the solution is to the top (i.e. the lower the score), the more confident you can be about selecting that alternate solution.
 #. Search file_provenance for the alternate solutions directory::
 
 	file_provenance=/scratch2/groups/gsi/production/vidarr/vidarr_files_report_latest.tsv.gz
 	zcat $file_provenance | grep ${donor} | grep .purple_alternates.zip | cut -f 1,2,8,14,19,31,47
+
+#. Copy the alternate solution zip file to your working directory.  
+   Use the purple_summarize_alts.py script in `djerba_prototypes <https://github.com/oicr-gsi/djerba_prototypes/blob/main/scripts>`_  
+   to see the potential purity and ploidy in each solution::
+
+      python3 ~/git/djerba_prototypes/scripts/purple_summarize_alts.py .
 
 #. Unzip the alternate directory and manually assign the purple outputs in the .ini. Solutions directories are labeled according to their ploidy; if your favoured solution has a ploidy between 1-2, choose ``sol1``; between 2-3, choose ``sol2`` etc. Specify your solution in the INI using::
 
