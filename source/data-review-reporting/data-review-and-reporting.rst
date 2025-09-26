@@ -261,7 +261,7 @@ When amendments are necessary, the following steps must be followed, led by the 
         
         <sup><strong style="color:red;">R1</strong></sup></a>
 
-    #. If this is the second amended report (i.e. version 3 report), keep a continuous record of all revisions by simply adding to the revision table that already exists.
+    #. If this is the second amended report (i.e. version 3 report), keep a continuous record of all revisions by simply adding to the revision table that already exists. The date of the report should reflect the date that the version 3 report was drafted. If the new revisions affect previous revisions, add a comma between the revision markers as below:
         
         .. image:: images/v3_amended_report.png
 
