@@ -281,6 +281,10 @@ When amendments are necessary, the following steps must be followed, led by the 
         </tr>
         <tr>
 
+    #. If this is the second amended report (i.e. version 3 report), keep a continuous record of all amended sign-offs by simply adding more amended sign-offs underneath the old ones. Example:
+
+        .. image:: images/v3_amended_sign_offs.png
+
 #. The normal Djerba rendering method will not function. Instead use a standalone PDF converter, such as the script `html_to_pdf.py <https://github.com/oicr-gsi/djerba_prototypes/blob/main/scripts/html_to_pdf.py>`__ from the `djerba_prototypes`_ repository. The PDF produced must have the standard Djerba page footer, including the report ID and the current date.
 #. To upload the amended report, go to the requisition, click edit, and upload the newly generated amended report. Make sure the version number is incremented. 
 #.  Inform the geneticist through Slack or email that the report has been submitted. They will not receive automatic notification. 
