@@ -261,6 +261,10 @@ When amendments are necessary, the following steps must be followed, led by the 
         
         <sup><strong style="color:red;">R1</strong></sup></a>
 
+    #. If this is the second amended report (i.e. version 3 report), keep a continuous record of all revisions by simply adding to the revision table that already exists.
+        
+        .. image:: images/v3_amended_report.png
+
     #. Add the amended sign offs. For example::
 
         <tr>
