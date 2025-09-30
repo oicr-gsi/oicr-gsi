@@ -257,15 +257,15 @@ When amendments are necessary, the following steps must be followed, led by the 
 
         <span DJERBA_COMPONENT_START='patient_info' />
 
-    #. Add the revision markers next to the relevant sections. Change the revision marker (R1, R2, R3, etc.) as needed.::
+    #. Add the revision markers (R1, R2, R3, etc.) as a superscript next to the reportable elements that have been changed.
         
         <sup><strong style="color:red;">R1</strong></sup></a>
 
-    #. If this is the second amended report (i.e. version 3 report), keep a continuous record of all revisions by simply adding to the revision table that already exists. The date of the report should reflect the date that the version 3 report was drafted. If the new revisions affect previous revisions, add a comma between the revision markers as below:
+    #. For additional amendments, keep a continuous record of all changes in the table (i.e. do not delete or overwrite table rows). The date of the report should reflect the date that the current amended report was drafted. If the new revisions affect previous revisions, add a comma between the revision markers as below:
         
         .. image:: images/v3_amended_report.png
 
-    #. Add the amended sign offs. For example::
+    #. Add the amended sign offs below the original sign-offs. For example::
 
         <tr>
             <td width="33%">Report drafted by CGI Member  on 2024-09-26</td>
@@ -281,7 +281,7 @@ When amendments are necessary, the following steps must be followed, led by the 
         </tr>
         <tr>
 
-    #. If this is the second amended report (i.e. version 3 report), keep a continuous record of all amended sign-offs by simply adding more amended sign-offs underneath the old ones. Example:
+    #. For additional amendments, keep a continuous record of all amended sign-offs by adding the sign-offs for the current amendment directly below all previous amended sign-offs:
 
         .. image:: images/v3_amended_sign_offs.png
 
