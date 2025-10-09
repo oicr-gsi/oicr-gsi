@@ -257,7 +257,7 @@ When amendments are necessary, the following steps must be followed, led by the 
 
         <span DJERBA_COMPONENT_START='patient_info' />
 
-    #. Add the revision markers (R1, R2, R3, etc.) as a superscript next to the reportable elements that have been changed.
+    #. Add the revision markers (R1, R2, R3, etc.) as a superscript next to the reportable elements that have been changed.::
         
         <sup><strong style="color:red;">R1</strong></sup></a>
 
