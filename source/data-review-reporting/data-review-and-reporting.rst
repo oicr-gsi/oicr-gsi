@@ -257,11 +257,15 @@ When amendments are necessary, the following steps must be followed, led by the 
 
         <span DJERBA_COMPONENT_START='patient_info' />
 
-    #. Add the revision markers next to the relevant sections. Change the revision marker (R1, R2, R3, etc.) as needed.::
+    #. Add the revision markers (R1, R2, R3, etc.) as a superscript next to the reportable elements that have been changed.::
         
         <sup><strong style="color:red;">R1</strong></sup></a>
 
-    #. Add the amended sign offs. For example::
+    #. For additional amendments, keep a continuous record of all changes in the table (i.e. do not delete or overwrite table rows). The date of the report should reflect the date that the current amended report was drafted. If the new revisions affect previous revisions, add a comma between the revision markers as below:
+        
+        .. image:: images/v3_amended_report.png
+
+    #. Add the amended sign offs below the original sign-offs. For example::
 
         <tr>
             <td width="33%">Report drafted by CGI Member  on 2024-09-26</td>
@@ -276,6 +280,10 @@ When amendments are necessary, the following steps must be followed, led by the 
             <td width="33%">Amended report electronically signed out by PLACEHOLDER (ABMS #XXXXXXX) on yyyy-mm-dd</td>
         </tr>
         <tr>
+
+    #. For additional amendments, keep a continuous record of all amended sign-offs by adding the sign-offs for the current amendment directly below all previous amended sign-offs:
+
+        .. image:: images/v3_amended_sign_offs.png
 
 #. The normal Djerba rendering method will not function. Instead use a standalone PDF converter, such as the script `html_to_pdf.py <https://github.com/oicr-gsi/djerba_prototypes/blob/main/scripts/html_to_pdf.py>`__ from the `djerba_prototypes`_ repository. The PDF produced must have the standard Djerba page footer, including the report ID and the current date.
 #. To upload the amended report, go to the requisition, click edit, and upload the newly generated amended report. Make sure the version number is incremented. 
