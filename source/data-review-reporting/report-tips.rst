@@ -30,7 +30,13 @@ When an alternate solution is better:
 
 If you still don’t like your solution, PURPLE can be relaunched manually, specifying the wanted purity and ploidy in the ``workflow.json`` for deployment in cromwell. Alternate solutions can be launched according to the following procedure
 
-#. Open purple.alternate.json and change the min/max purity/ploidy parameters in the .json to match with your desired solution
+#. Open purple.alternate.json in the report folder and change the min/max purity/ploidy parameters (in string format) in the .json to match with your desired solution. Fill the tumour/normal bam/bai file directories as well, which can be fetched using the following command::
+
+	file_provenance=/scratch2/groups/gsi/production/vidarr/vidarr_files_report_latest.tsv.gz
+	zgrep ${DONOR} $file_provenance | grep .filter.deduped.recalibrated.bam | cut -f1,2,47,23,31,14
+	zgrep ${DONOR} $file_provenance | grep .filter.deduped.recalibrated.bai | cut -f1,2,47,23,31,14
+
+#. Clone `purple.wdl`_ to a local directory
 #. Launch cromwell on the HPC with `purple.wdl`_ using the following::
 
 	module load cromwell
@@ -38,7 +44,7 @@ If you still don’t like your solution, PURPLE can be relaunched manually, spec
 	 --inputs purple.alternate.json \
 	 --host http://cromwell-dev-2.hpc.oicr.on.ca:8000 >purple.alternate.txt
 
-#. Retrieve the workflow outputs from the `Cromwell workflow manager`_ using the workflow ID in purple.alternate.txt. 
+#. Retrieve the workflow outputs from the `Cromwell workflow manager`_ using the workflow ID in purple.alternate.txt. Click the "OUTPUT" tab and copy the ".solPrimary.purple.zip" file stored in "purple_directory" to your working directory
 #. Complete the procedure as in `alt-solution`_ above.
 
 .. _purple.wdl: https://github.com/oicr-gsi/purple/blob/main/purple.wdl
