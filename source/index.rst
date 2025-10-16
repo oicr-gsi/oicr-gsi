@@ -20,7 +20,7 @@ Contact us through the Github issue tracker on any project.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Informatics Pipelines
+   :caption: Accredited Pipelines
 
    informatics-pipelines/informatics-pipelines
    informatics-pipelines/assays
@@ -35,6 +35,12 @@ Contact us through the Github issue tracker on any project.
 
 .. In most cases, we can use Intersphinx to link between the main project and the subproject
 .. But not in toctree. For some reason.
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Research Use Only Pipelines
+
+   ruo-pipelines/ruo-assays
 
 .. toctree::
    :maxdepth: 1
