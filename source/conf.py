@@ -28,6 +28,9 @@ templates_path = ['_templates']
 exclude_patterns = []
 
 rst_prolog = """
+.. |hg38-version| replace:: hg38-p12
+.. |hg38-ref-remote| replace:: `UCSC <https://hgdownload.cse.ucsc.edu/goldenpath/hg38/bigZips/p12/>`__
+.. |hg38-ref-local| replace:: `Modulator </.mounts/labs/gsi/modulator/sw/data/hg38-p12/hg38_random.fa>`__
 """
 
 
