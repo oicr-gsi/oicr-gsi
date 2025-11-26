@@ -125,11 +125,11 @@ Targeted Sequencing (TAR) version |tar-version|
 2.	FASTQ files are aligned with BwaMem to generate an unprocessed lane-level BAM file.
 3.	Cases are quality controlled with the bamQC workflow generating a JSON file of lane-level alignment QC metrics for review. The quality control metrics include the insert size distribution, amount of duplication, mapping percentage, and other TAR ‘Single Lane’ metrics described in QM. Quality Control and Calibration Procedures.  Genomic fingerprints are generated from lane-level alignments and made available to sample authentication procedures.
 4.	All lane-level BAM files are collected and processed via BamMergePreProcessing, which merges and sorts lane-level BAMs, as well as performing  duplicate marking, and base recalibration to generate a call-ready sample-level BAM.
-5.	The FASTQ files are aligned with consensusCruncher fastq2bam (using bwamem) and then processed through consensusCruncher to generate UMI-tagged and consensus-collapsed partitioned bam files.  Tumour and matched normal samples are processed indpendently.
+5.	The FASTQ files are aligned with consensusCruncher fastq2bam (using bwamem) and then processed through consensusCruncher to generate UMI-tagged and consensus-collapsed partitioned bam files.  Tumour and matched normal samples are processed independently.
 6.	The collapsed, partitioned bam files from both the tumour and matched normal samples are each analyzed with MuTect2 in single-sample/tumour-only mode to generate variant calls on each sample/partition. 
 7.	Variants from the dcs_sc and sscs_sc partitions are combined with GATK combineVariants to generate raw call files. These are annotated with allele depths from the allUnique partion using bcftools.
 8.	The final set of variant calls from each sample is annotated with Variant Effect Predictor, and converted to maf ( mutation annotation format) files.
-9.	The tumour maf is filtered and annotated with information from the matched normal maf to identify likely calls. 
+9.	The tumour maf is filtered and annotated with information from the matched normal maf to identify likely germline calls. 
 10.	All alteration files are provided to Djerba to generate a provisional clinical report for review by genome interpreters.
 
 
