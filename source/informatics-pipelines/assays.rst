@@ -125,8 +125,10 @@ Targeted Sequencing (TAR) version |tar-version|
 2.	FASTQ files are aligned with BwaMem to generate an unprocessed lane-level BAM file.
 3.	Cases are quality controlled with the bamQC workflow generating a JSON file of lane-level alignment QC metrics for review. The quality control metrics include the insert size distribution, amount of duplication, mapping percentage, and other TAR ‘Single Lane’ metrics described in QM. Quality Control and Calibration Procedures.  Genomic fingerprints are generated from lane-level alignments and made available to sample authentication procedures.
 4.	All lane-level BAM files are collected and processed via BamMergePreProcessing, which merges and sorts lane-level BAMs, as well as performing  duplicate marking, and base recalibration to generate a call-ready sample-level BAM.
-5.	The FASTQ files are also processed with ConsensusCruncherWorkflow to generate UMI-tagged and consensus-collapsed bam files. The ConsensusCruncherWorkflow  uses MuTect2 followed by Variant Effect Predictor to generate raw call files, and HSMetrics to generate collapsed coverage metrics. For variant calling, the duplex consensus sequences and single-stand consensus sequence with singleton corrected bam files are used to generate raw calls, which are then annotated with the variant allele frequency from the all-unique bam file.
-6.	All alteration files are provided to Djerba to generate a provisional clinical report for review by genome interpreters.
+5.	The FASTQ files are aligned with BwaMem in the umiConsensus workflow, and then processed through consensusCruncher to generate UMI-tagged and consensus-collapsed partitioned bam files.  Tumour and matched normal samples are processed indpendently.
+6.      The collapsed, partitioned bam files from both the tumour and matched normal samples are analyzed with MuTect2 in single-sample/tumour-only mode to generate variant calls on each partition. Variants are then combined from the duplex consensus and sign-strand consensus partitions into a single set of calls for each of the two samples. Data is annotated with variant effect predictor and converted to maf format. The tumour maf is annotated with germline information obtained from the matched normal maf. 
+7.	All alteration files are provided to Djerba to generate a provisional clinical report for review by genome interpreters.
+
 
 TAR Workflows and Software
 ---------------------------
