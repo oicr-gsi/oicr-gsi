@@ -5,6 +5,8 @@ bamMergePreprocessing
 dnaSeqQC
 bamqc
 consensusCruncher
+umiConsensus
+mutect2Consensus
 mutect2
 variantEffectPredictor
 crosscheckFingerprintsCollector
