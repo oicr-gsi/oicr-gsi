@@ -434,7 +434,7 @@ Run the ``config.ini`` as usual with the Djerba command::
 .. _workaround-for-wgts-tar-failed-reports:
 
 Workaround for Failed WGTS and TAR Report Without Full-depth Sequencing
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For any WGTS and TAR cases that failed before full-depth sequencing, refer to `workaround for failed WGTS and TAR report without full-depth sequencing🔒`_ for further details and instructions on how to generate the report.
 
