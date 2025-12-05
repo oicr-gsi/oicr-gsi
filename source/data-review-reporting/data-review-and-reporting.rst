@@ -431,6 +431,15 @@ Run the ``config.ini`` as usual with the Djerba command::
     djerba.py report -i config.ini -o report/ -p 
 
 
+.. _workaround-for-wgts-tar-failed-reports:
+
+Workaround for Failed WGTS and TAR Report Without Full-depth Sequencing
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+For any WGTS and TAR cases that failed before full depth sequencing, refer to `workaround for failed WGTS and TAR report without full-depth sequencing🔒`_ for further details and instructions on how to generate the report.
+
+.. _workaround for failed WGTS and TAR report without full-depth sequencing🔒 : https://wiki.oicr.on.ca/spaces/GSI/pages/318276947/Workaround+for+WGTS+TAR+Failed+Report+Generation+Post-Extraction+Failure
+
 .. _additional-considerations:
 
 Additional Considerations
