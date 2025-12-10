@@ -127,10 +127,12 @@ Targeted Sequencing (TAR) version |tar-version|
 4.	All lane-level BAM files are collected and processed via BamMergePreProcessing, which merges and sorts lane-level BAMs, as well as performing  duplicate marking, and base recalibration to generate a call-ready sample-level BAM.
 5.	The umiConsensus workflow processes FASTQ files by aligning to reference with *consensusCruncher fastq2bam* (using bwamem). Mapped reads are then umi-collapsed with *consensusCruncher consensus* producing partitioned bam files.  Tumour and matched normal samples are processed independently.
 6.	The collapsed, partitioned bam files from both the tumour and matched normal samples are analyzed in the mutect2Consensus workflow by
-	i)	identifying variants wwith MuTect2 in single-sample/tumour-only mode.
-	ii)	merging vcf output for the dcs_sc and sscs_sc partitions with GATK combineVariants to generate raw call files. These are annotated with allele depths from the allUnique partion using bcftools.
-	iii)	the final set of variant calls from each sample is annotated with Variant Effect Predictor, and converted to maf ( mutation annotation format) files.
-	iv)	the tumour maf is filtered and annotated with information from the matched normal maf to identify likely germline calls.
+
+	a.	Identifying variants wwith MuTect2 in single-sample/tumour-only mode.
+	b.	Merging vcf output for the dcs_sc and sscs_sc partitions with GATK combineVariants to generate raw call files. These are annotated with allele depths from the allUnique partion using bcftools.
+	c.	The final set of variant calls from each sample is annotated with Variant Effect Predictor, and converted to maf ( mutation annotation format) files.
+	d.	The tumour maf is filtered and annotated with information from the matched normal maf to identify likely germline calls.
+
 7.	All germline annotated tumour maf is provided to Djerba to generate a provisional clinical report for review by genome interpreters.
 
 
