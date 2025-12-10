@@ -128,7 +128,7 @@ Targeted Sequencing (TAR) version |tar-version|
 5.	The umiConsensus workflow processes FASTQ files by aligning to reference with *consensusCruncher fastq2bam* (using bwamem). Mapped reads are then umi-collapsed with *consensusCruncher consensus* producing partitioned bam files.  Tumour and matched normal samples are processed independently.
 6.	The collapsed, partitioned bam files from both the tumour and matched normal samples are analyzed in the mutect2Consensus workflow by
 
-	a.	Identifying variants wwith MuTect2 in single-sample/tumour-only mode.
+	a.	Identifying variants with MuTect2 in single-sample/tumour-only mode.
 	b.	Merging vcf output for the dcs_sc and sscs_sc partitions with GATK combineVariants to generate raw call files. These are annotated with allele depths from the allUnique partion using bcftools.
 	c.	The final set of variant calls from each sample is annotated with Variant Effect Predictor, and converted to maf ( mutation annotation format) files.
 	d.	The tumour maf is filtered and annotated with information from the matched normal maf to identify likely germline calls.
