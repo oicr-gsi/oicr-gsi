@@ -16,4 +16,3 @@ msisensor
 hrDetect
 gridss
 purple
-t1k

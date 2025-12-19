@@ -40,8 +40,6 @@ The config.ini file created in :ref:`djerba-working-dir` is empty by default and
 
 	[fusion]
 
-	[hla]
-
 	[sample]
 
 	[summary]
