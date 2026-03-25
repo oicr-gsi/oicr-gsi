@@ -121,7 +121,7 @@ Targeted Sequencing (TAR) version |tar-version|
 	**Targeted Sequencing Analysis Pipeline**
 
 1.	As with the WGTS informatics pipeline, the targeted sequencing pipeline commences once FASTQ files are generated from bcl2fastq. 
-2.	FASTQ files are aligned with BwaMem to generate an unprocessed lane-level BAM file.
+2.	FASTQ files are aligned with BwaMem2 to generate an unprocessed lane-level BAM file.
 3.	Cases are quality controlled with the bamQC workflow generating a JSON file of lane-level alignment QC metrics for review. The quality control metrics include the insert size distribution, amount of duplication, mapping percentage, and other TAR ‘Single Lane’ metrics described in QM. Quality Control and Calibration Procedures.  Genomic fingerprints are generated from lane-level alignments and made available to sample authentication procedures.
 4.	All lane-level BAM files are collected and processed via BamMergePreProcessing, which merges and sorts lane-level BAMs, as well as performing  duplicate marking, and base recalibration to generate a call-ready sample-level BAM.
 5.	The umiConsensus workflow processes FASTQ files by aligning to reference with *consensusCruncher fastq2bam* (using bwamem). Mapped reads are then umi-collapsed with *consensusCruncher consensus* producing partitioned bam files.  Tumour and matched normal samples are processed independently.
