@@ -1,6 +1,6 @@
 bcl2fastq
 fastqc
-bwaMem
+bwaMem2
 bamMergePreprocessing
 dnaSeqQC
 bamqc
