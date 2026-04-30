@@ -75,6 +75,14 @@ This information is usually obtained from the Requisition (Req) system.
 
 It's also necessary to update the ``Author`` field from **"Analysis Author"** to your name.
 
+.. note::
+
+   Until the olive is updated, the following two fields must be temporarily modified manually:
+
+   * ``site_of_biopsy`` should be set to ``cfDNA`` (not ``N/A``)
+   * ``sample_type`` should be set to ``cfDNA`` (not ``N/A``)
+
+
 
 Interpreting the TAR Report
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
