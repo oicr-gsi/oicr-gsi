@@ -1,232 +1,149 @@
 Targeted Sequencing (TAR) Reports
 ===============================================
 
-.. _tar-ini-config:
+.. _retrieve-pregenerated-djerba-reports:
 
-Djerba INI configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
+First, set up the working directory and analysis environment
 
-First, set up the working directory as outlined in :ref:`djerba-working-dir`.
+#. Login and set up the analysis environment on a Univa compute node, as described in step 1.
+#. Identify the case you want to review by querying the latest Vidarr report index:
 
-Information is usually obtained either from one of two Data Sources: the Requisition (Req) system or Dimsum.
+   .. code-block:: bash
 
-* :ref:`navigate-reqsys`
-* :ref:`navigate-dimsum`
+      zgrep djerbaReportGenerator /scratch2/groups/gsi/staging/vidarr/vidarr_files_report_latest.tsv.gz \
+      | grep CHARM2_caseID \
+      | cut -f1,2,47,23,31,14
 
-The following information must be populated into the .ini file:
+#. Locate the corresponding ``.gz`` archive for the correct requisition.
+#. Copy the correct file into your usual working directory.
+#. Extract the archive:
 
-.. list-table:: Fields to fill tar_input_params_helper section
-	:widths: 20 20 20 20
-	:header-rows: 1
+   .. code-block:: bash
 
-	* 	- Parameter
-		- Source
-		- Description
-		- Example
-	*	- ``donor``
-		- Dimsum, first link
-		- LIMS ID comprising the study name and patient number
-		- REVOLVE_0001
-	* 	- ``project``
-		- Dimsum, first link
-		- Name of the project in provenance
-		- REVTAR
-	* 	- ``study``
-		- Req system, “Name of study (acronym)” under “Submission” tab
-		- Requisition system
-		- Re-VOLVE
-	*	- ``oncotree_code``
-		- Req system, “OncoTree code” under “Submission” tab
-		- OncoTree code
-		- HGSOC
-	*	- ``cbio_id``
-		- shesmu_
-		- (When not known, same as project)
-		- REVOLVE
-	*	- ``patient_study_id``
-		- Req system. “Patient study ID” under “Submission” tab.
-		- Patient study ID in requisition system. Refer to the “External Names” in MISO to find the “Patient Study ID” within the requisition system, eg. REVOLVE_001 -> REV-TAR-329.
-		- REV-01-001
-	*	- ``tumour_id``
-		- Dimsum, Test, Tumour TS
-		- ID of tumour sample
-		- REV-01-001_Pl
-	*	- ``normal_id``
-		- Dimsum, Test, Normal TS
-		- ID of blood sample
-		- REV-01-001_BC
-	*	- ``primary_cancer``
-		- Req system, “Primary cancer diagnosis” under “Submission” tab
-		- Name of primary cancer
-		- High grade serous ovarian carcinoma
-	*	- ``site_of_biopsy``
-		- Req system
-		- Site of biopsy/surgery (usually cfDNA)
-		- cfDNA
-	*	- ``sample_type``
-		- Req system
-		- Sample type  (usually cfDNA)
-		- cfDNA
-	*	- ``known_variants``
-		- Req system
-		- A known variant from previous genetic testing
-		- TP53 p.(D158*)
-	*	- ``requisition_approved``
-		- Req system, ‘Submission approved” date under “Case History” tab
-		- Date of first requisition approval by Tissue Portal staff in yyyy-mm-dd format
-		- 2023-10-31
-	*	- ``requisition_id``
-		- Req system, Top of the requisition after “ID”
-		- Name of the requisition
-		- REVWGTS-P-861
-	*	- ``assay``
-		- Req system
-		- The assay used (targeted sequencing assay, value is “TAR”)
-		- TAR
+      tar -xvzf reqID-v1.tar.gz
 
-.. list-table:: Fields to fill ``provenance_helper`` section
-	:widths: 20 20 20 20
-	:header-rows: 1
-	
-	* 	- ``sample_name_normal``
-		- Dimsum - Full Depth Sequencings
-		- Default value is None
-		- REVOLVE_0001_01_LB01-02
-	*	- ``sample_name_tumour``
-		- Dimsum - Full Depth Sequencings
-		- Default value is None
-		- REVOLVE_0001_04_LB01-02
-	*	- ``sample_name_aux``
-		- Dimsum - Full Depth Sequencings
-		- Default value is None
-		- REVOLVE_0001_04_LB01-01
-	*	- ``sample_name_normal``
-		- Dimsum - Full Depth Sequencings
-		- 
-		- REVOLVE_0001_01_LB01-02
+#. Navigate into the extracted folder:
 
-.. list-table:: Fields to fill ``tar.status`` section
-	:widths: 20 20 20 20
-	:header-rows: 1
+   .. code-block:: bash
 
-	*	- ``copy_number_ctdna_detected``
-		- Upon review of ichorCNA plot
-		- Default value is False
-		- False/True
-	*	- ``small_mutation_ctdna_detected``
-		- Upon review of the reported SNVs
-		- Default value is False
-		- False/True
+      cd reqID-v1
 
-.. _shesmu: https://bitbucket.oicr.on.ca/projects/GSI/repos/analysis-config/browse/shesmu/common/tgl_project.jsonconfig
+   This directory contains all Djerba-generated files required for review and report generation.
+
+#. Proceed to review and interpretation of the interim HTML report.
+
+.. note::
+
+   The ``vidarr-u20-djerbaReportGenerator.shesmu`` olive automatically generates these reports. There is no longer a need to manually create or configure the config.ini from scratch.
 
 
-Example of a completed Djerba INI file
-***************************************
+--------------------------------------------
 
-Spaces are acceptable in the parameter value and on either side of the = sign::
+.. _retrieve-pregenerated-djerba-reports:
 
-	[core]
-
-	[tar_input_params_helper]
-	donor=REVOLVE_0001
-	project=REVTAR
-	study=Re-VOLVE
-	oncotree_code=HGSOC
-	cbio_id=REVOLVE
-	patient_study_id=REV-01-001
-	tumour_id=REV-01-001_Pl
-	normal_id=REV-01-001_BC
-	primary_cancer=High grade serous ovarian carcinoma
-	site_of_biopsy=cfDNA
-	sample_type = cfDNA
-	known_variants=<em>TP53</em> (p.D148*)
-	requisition_approved=2023-05-09
-	requisition_id = REVWGTS-P-861
-	assay=TAR
-
-	[provenance_helper]
-	sample_name_normal = REVOLVE_0001_01_LB01-02
-	sample_name_tumour = REVOLVE_0001_04_LB01-02
-	sample_name_aux = REVOLVE_0001_04_LB01-01
-
-	[report_title]
-
-	[patient_info]
-
-	[case_overview]
-
-	[gene_information_merger]
-
-	[treatment_options_merger]
-
-	[summary]
-
-	[tar.sample]
-
-	[tar.snv_indel]
-
-	[tar.swgs]
-
-	[tar.status]
-	copy_number_ctdna_detected = False
-	small_mutation_ctdna_detected = False
-
-	[supplement.body]
-
-Interim Report Generation
+Interim Report Review And Modifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Login and setup the analysis environment on a Univa compute node, as described in step 1.
-#. Run djerba.py in report mode to generate an HTML report. (See below for examples.)
-#. Output filename is of the form ``${TUMOUR_ID}-v{VERSION_NUMBER}.html`` in the report directory, where $TUMOUR_ID is the tumour ID from Dimsum.
-#. Run the script using the INI file completed in :ref:`tar-ini-config` and the ‘report’ subdirectory created in :ref:`djerba-working-dir` for intermediate output. Example::
+Until API integration is available to automate this step, these values must be manually updated in the reqID-v1_report.json file.
+This information is usually obtained from the Requisition (Req) system.
 
-	$ djerba.py report -i config.ini -o report/ 
+* :ref:`navigate-reqsys`
 
-#. Proceed to review and interpretation of the interim HTML output.
+.. list-table:: Fields to fill tar_input_params_helper section
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Parameter
+     - Source
+     - Description
+     - Example
+
+   * - ``study``
+     - Req system, “Name of study (acronym)” under “Submission” tab
+     - Requisition system study identifier
+     - Re-VOLVE
+
+   * - ``known_variants``
+     - Req system
+     - Known variant from previous genetic testing
+     - TP53 p.(D158*)
+
+   * - ``requisition_approved``
+     - Req system, “Submission approved” date under “Case History” tab
+     - Date of first requisition approval in yyyy-mm-dd format
+     - 2023-10-31
+
+It's also necessary to update the ``Author`` field from **"Analysis Author"** to your name.
+
 
 Interpreting the TAR Report
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. Review case information in the “Case Overview” section.
 
-Most results are reviewed within the interim report. Results reviewed by other means are explicitly mentioned in the text.
+#. Review tumour information in the “Sample Information” section.
 
-#. Review and confirm accuracy of non-PHI fields on interim report relative to current requisition in requisition portal in the case overview section.
-#. Information regarding the tumour will be listed in the “Sample Information” section:
-#. Review whizbam links for variants:
+#. Review Whizbam links for variants:
 
-	* All variant calls must be viewed to gauge whether they are confident and thus reportable or an artifact and thus must be removed.
-	* In general, if there are non-variant supporting reads in the normal, the variant is more likely to be an artifact. 
-	* Examples: :ref:`tar-whizbam-examples`
+   * All variant calls must be inspected to determine whether they are true positives or artefacts.
+   * Variants supported by non-variant reads in the normal sample are more likely to be artefacts.
+   * Examples: :ref:`tar-whizbam-examples`
 
-.. _review the ichorCNA plot:
+#. Examine copy number solution in:
 
-#. Examine the copy number solution in ``report/$(sample_name_aux)_genomeWide.pdf``. If the tumour fraction is less than 10%, confirm that the plot is centered at 0. If the tumour fraction is greater than 10%, confirm that the plot is centered at 0 and determine if the high tumour fraction is being driven by potentially artifact chromosomal regions. The regions that correspond to recurrent artifacts commonly found in healthy controls (i.e. likely false positives) are: 1p, 10q, 17, 19, and 22.
+   ``report/$(sample_name_aux)_genomeWide.pdf``
 
-	* Examples: :ref:`tar-ichor-examples`
-	* If it is determined that the high purity is likely driven by potentially artifact chromosomal regions, change the estimated tumour fraction to <10%. Copy number variants must be removed.
+   * If tumour fraction < 10%, confirm plot is centred at 0.
+   * If tumour fraction > 10%, assess whether apparent elevation is driven by artefactual chromosomal regions.
+   * Common artefact regions: 1p, 10q, 17, 19, 22.
 
-#. After reviewing both the copy number variants and the small mutations, the parameters in ``[tar.status]`` in the ``config.ini`` may need to be adjusted. Both ``copy_number_ctdna_detected`` and ``small_mutation_ctdna_detected`` automatically default to False.
+   * Examples: :ref:`tar-ichor-examples`
 
-	.. image:: images/tar-status1.png
+   * If high purity is driven by artefactual regions, set tumour fraction to <10% and remove copy number variants.
 
-	After reviewing the SNVs and purity/CNVs, adjust the parameters as follows:
+#. After reviewing copy number and small mutations:
 
-		* ``copy_number_ctdna_detected = True`` if the purity is ≥ 10%
-		* ``small_mutation_ctdna_detected = True`` if there are high confidence SNVs present 
+   Update the following fields as needed:
 
-	Once done, re-generate the report to ensure changes to ``[tar.status]`` are rendered correctly::
-	
-		$ djerba.py report -i config.ini -o report/
+   * ``copy_number_ctdna_detected``
+   * ``small_mutation_ctdna_detected``
+   * ``any_ctdna_detected``
 
-	For example, for a report with ``copy_number_ctdna_detected = True`` and ``small_mutation_ctdna_detected = False``, the output will be:
+   **Defaults:**
+   * False / “ctDNA not detected”
+   * “Not Detected”
 
-	.. image:: images/tar-status2.png
+   **If evidence supports detection:**
+   * True / “ctDNA detected”
+   * “Detected”
 
-#. Once the variants to remove have been identified, remove them from ``djerba_report.json``. :ref:`json-tips`
+   Example configuration:
+
+   .. code-block:: json
+
+      {
+        "plugins": {
+          "tar.status": {
+            "results": {
+              "copy_number_ctdna_detected": "ctDNA detected",
+              "small_mutation_ctdna_detected": "ctDNA not detected",
+              "any_ctdna_detected": "Detected"
+            }
+          }
+        },
+        "config": {
+          "tar.status": {
+            "copy_number_ctdna_detected": "True",
+            "small_mutation_ctdna_detected": "False"
+          }
+        }
+      }
+
+   .. image:: images/tar-status2.png
+
+#. Once the variants to remove have been identified, remove them from ``reqID-v1_report.json``. :ref:`json-tips`
 
 	.. note:: 
-			For all follow-up cases, ensure that the status is consistent with the previous submission. If the case is positive — either due to a tumor fraction >10% or the presence of a reported SNV — be sure to double-check the original ichorCNA plot and confirm the variants reported in the initial submission.
+			For all follow-up cases, ensure that the status is consistent with the previous submission. If the case is positive; either due to a tumor fraction >10% or the presence of a reported SNV; be sure to double-check the original ichorCNA plot and confirm the variants reported in the initial submission.
 
 			It is not uncommon for the follow-up report to show new variants or higher tumor fraction; this can occur if the original sample was below our limit of detection. In such cases, review the old data in IGV to see if any supporting reads were present, and examine the ichorCNA plot for amplifications that may align with the current findings. 
 
@@ -316,10 +233,24 @@ Draft Report
 
 Regenerate the PDF report with the interpretation changes and summary text:
 
-	* Update the genomic summary text in the report JSON document as follows (note that input and output for the ``update_summary.py`` script may be the same file)::
+* Update the genomic summary text in the report JSON document as follows (note that input and output for the ``update_summary.py`` script may be the same file)::
 
-		$ djerba.py update -s report/results_summary.txt -j report/report.json -o report/ -p
+      $ djerba.py update -s report/results_summary.txt -j report/reqID-v1_report.json -o report/ -p
 
+
+* Alternatively, all changes made to ``reqID-v1_report.json`` can be made to ``reqID-v1_report.updated.json``, including updates to ``results_summary.txt``, by inserting the desired text under the following JSON field:
+
+::
+
+    "results": {
+        "summary_text": ""
+    }
+
+Then run:
+
+::
+
+    $ djerba.py render -j report/reqID-v1_report.updated.json -o report/ -p
 Continue to :ref:`Review the Draft Report` ➡️
 **********************************************
 
@@ -336,32 +267,35 @@ The following is an example sequence of commands used to generate a clinical rep
 	$ module load djerba
 	$ cd WORK_DIR
 
-	# make a folder with the donor name, ex. REVOLVE_0001
-	$ mkdir REVOLVE_0001
-	$ cd REVOLVE_0001
+	# make a folder structure with the donor name/requisition ID/report
+	$ mkdir -p REVOLVE_0001/REV-01/report
+	$ cd REVOLVE_0001/REV-01
 
-	# make a folder with the report directory, i.e. report/
-	$ mkdir report
+	# Fetch the pre-genrated Djerba report
+	$ zgrep djerbaReportGenerator /scratch2/groups/gsi/staging/vidarr/vidarr_files_report_latest.tsv.gz | grep REVOLVE_0001
 
-	# create a config.ini file
-	$ djerba.py setup --assay ASSAY --ini {WORK_DIR}/config.ini --compact –p ../../../CHARM2PLAS_project.ini
-	$ vim  {WORK_DIR}/config.ini
-
-	# run djerba.py to generate a report
-	$ djerba.py report -i config.ini -o report/
+	# Copy the correct .tar.gz into working directory and extract
+	$ tar -xvzf REV-01.tar.gz
 
 	# review the HTML
-	# review whizbam links in data_mutations_extended_oncogenic.txt 
-	# remove any false calls in djerba_report.json (use json.tool to make it easier)
-	$ cat djerba_report.json | python3 -m json.tool > report/djerba_report_machine.pretty.json
-	$ vim djerba_report_machine.pretty.json
 
-	# edit results_summary.txt to write the genomic summary 
+	# Pretty-print JSON for review (choose one command or use your IDE to make it easier)
+	$ cat REV-01-v1_report.json | python3 -m json.tool > report/REV-01-v1_report.pretty.json
+	$ jq . REV-01-v1_report.json > REV-01-v1_report.pretty.json
+
+	# Edit JSON ("study", "requisition_approved", "known_variants", "author" etc.)
+	$ vim REV-01-v1_report.pretty.json
+
+	# Review whizbam links in data_mutations_extended_oncogenic.txt
+	# Remove any false calls in REV-01-v1_report.pretty.json
+
+	# Edit results_summary.txt to write the genomic summary
 	$ vim report/results_summary.txt
 
-	# update the ctDNA plugin status from "Not Detected” to “Detected” if needed
-	# update the genomic summary
-	$ djerba.py update -s report/results_summary.txt -j report/report.json -o report/ -p
+	# Update the ctDNA plugin status from "Not Detected” to “Detected” if needed
+
+	# Update the genomic summary
+	$ djerba.py update -s report/results_summary.txt -j report/REV-01-v1_report.pretty.json -o report/ -p
 
 
 +----------------+----------------------+
