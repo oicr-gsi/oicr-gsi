@@ -201,10 +201,17 @@ Most results are reviewed within the interim report. Results reviewed by other m
 
 .. _review the ichorCNA plot:
 
-#. Examine the copy number solution in ``report/$(sample_name_aux)_genomeWide.pdf``. If the tumour fraction is less than 10%, confirm that the plot is centered at 0. If the tumour fraction is greater than 10%, confirm that the plot is centered at 0 and determine if the high tumour fraction is being driven by potentially artifact chromosomal regions. The regions that correspond to recurrent artifacts commonly found in healthy controls (i.e. likely false positives) are: 1p, 10q, 17, 19, and 22.
+#. Examine the copy number solution in ``report/$(sample_name_aux)_genomeWide.pdf``.
 
-	* Examples: :ref:`tar-ichor-examples`
-	* If it is determined that the high purity is likely driven by potentially artifact chromosomal regions, change the estimated tumour fraction to <10%. Copy number variants must be removed.
+   If the tumour fraction is less than 10%, confirm that the plot is centered at 0 (i.e. that the majority of chromosomes have a log2ratio of 0, depicted by blue-shaded segments). If the tumour fraction is greater than 10%, confirm that the plot is centered at 0 and assess whether the elevated tumour fraction is driven by potentially artifactual chromosomal regions. Regions commonly observed as recurrent artifacts in healthy controls (i.e. likely false positives) include: 1p, 10q, 17, 19, and 22.
+
+   * Examples: :ref:`tar-ichor-examples`
+
+   * If the elevated tumour fraction is likely driven by artifactual chromosomal regions, set the estimated tumour fraction to <10%. Copy number variants must be removed.
+
+   * Subsequent time points to a positive:
+     
+     For samples from a subsequent time point with tumour fraction <10%, compare the copy number profile to the preceding positive (>10%) time point. If a similar signal is present, retain the tumour fraction as <10% but report the sample as **ctDNA detected (copy number analysis)**.
 
 #. After reviewing both the copy number variants and the small mutations, the parameters in ``[tar.status]`` in the ``config.ini`` may need to be adjusted. Both ``copy_number_ctdna_detected`` and ``small_mutation_ctdna_detected`` automatically default to False.
 
