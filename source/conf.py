@@ -10,11 +10,23 @@ import subprocess
 # ---------------------------------------------------------------------------
 # Per-assay configuration
 #
-# When building a per-assay RTD project, set the ASSAY environment variable
-# to one of: wgts, tar, pwgs.  Leaving it unset builds the full main project.
+# On Read the Docs, the assay is detected automatically from the project slug
+# (READTHEDOCS_PROJECT env var, always set by RTD).  The RTD project slug must
+# contain the assay name: e.g. "oicr-gsi-wgts", "oicr-tar", "pwgs-pipeline".
+#
+# For local per-assay builds, set ASSAY=wgts|tar|pwgs explicitly:
+#   ASSAY=wgts sphinx-build source build/
+#
+# Leaving both unset builds the full main project.
 # ---------------------------------------------------------------------------
 
 _ASSAY = os.environ.get('ASSAY', '').lower()
+if not _ASSAY:
+    _rtd_project = os.environ.get('READTHEDOCS_PROJECT', '').lower()
+    for _candidate in ('wgts', 'tar', 'pwgs'):
+        if _candidate in _rtd_project:
+            _ASSAY = _candidate
+            break
 
 _SHARED_RST_PROLOG = """
 .. |hg38-version| replace:: hg38-p12
