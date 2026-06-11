@@ -44,17 +44,17 @@ if _ASSAY == 'wgts':
     project = 'OICR Genomics WGTS Pipeline'
     version = '6.0'
     release = '6.0'
-    root_doc = 'wgts/index'
+    tags.add('wgts_build')
+    # Toctrees inside inactive .. only:: blocks still get parsed by Sphinx;
+    # suppress the resulting "reference to excluded document" warnings.
+    suppress_warnings = ['toc.excluded']
     exclude_patterns = [
-        'index.rst',
         'informatics-pipelines/assays.rst',
         'informatics-pipelines/tar.rst',
         'informatics-pipelines/pwgs.rst',
         'data-review-reporting/tar-report.rst',
         'data-review-reporting/plasma-report.rst',
         'ruo-pipelines/**',
-        'tar/**',
-        'pwgs/**',
         '_build/**',
         'venv/**',
     ]
@@ -66,17 +66,15 @@ elif _ASSAY == 'tar':
     project = 'OICR Genomics TAR Pipeline'
     version = '4.0'
     release = '4.0'
-    root_doc = 'tar/index'
+    tags.add('tar_build')
+    suppress_warnings = ['toc.excluded']
     exclude_patterns = [
-        'index.rst',
         'informatics-pipelines/assays.rst',
         'informatics-pipelines/wgts.rst',
         'informatics-pipelines/pwgs.rst',
         'data-review-reporting/wgts-report.rst',
         'data-review-reporting/plasma-report.rst',
         'ruo-pipelines/**',
-        'wgts/**',
-        'pwgs/**',
         '_build/**',
         'venv/**',
     ]
@@ -88,17 +86,15 @@ elif _ASSAY == 'pwgs':
     project = 'OICR Genomics pWGS Pipeline'
     version = '3.0'
     release = '3.0'
-    root_doc = 'pwgs/index'
+    tags.add('pwgs_build')
+    suppress_warnings = ['toc.excluded']
     exclude_patterns = [
-        'index.rst',
         'informatics-pipelines/assays.rst',
         'informatics-pipelines/wgts.rst',
         'informatics-pipelines/tar.rst',
         'data-review-reporting/wgts-report.rst',
         'data-review-reporting/tar-report.rst',
         'ruo-pipelines/**',
-        'wgts/**',
-        'tar/**',
         '_build/**',
         'venv/**',
     ]
@@ -112,9 +108,6 @@ else:
     version = '1.0'
     release = '1.0'
     exclude_patterns = [
-        'wgts/index.rst',
-        'tar/index.rst',
-        'pwgs/index.rst',
         '_build/**',
         'venv/**',
     ]

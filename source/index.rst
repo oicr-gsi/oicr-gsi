@@ -1,63 +1,148 @@
-OICR Genome Sequence Informatics documentation
-==============================================
+.. only:: wgts_build
 
-GSI is a team of bioinformaticians and software developers at `Ontario Institute for Cancer Research`_ that develop, maintain, and operate the core analysis infrastructure, analyze genomic data produced at the institute, and support collaborators and researchers with their bioinformatics analysis. To support these activities, we have developed a large suite of open-source software that can be found under our Github organizations: `oicr-gsi`_ and `miso-lims`_.
+   OICR Genomics WGTS Pipeline documentation
+   ==========================================
 
+   .. toctree::
+      :maxdepth: 1
+      :caption: Accredited Pipelines
 
-.. _Ontario Institute for Cancer Research: https://oicr.on.ca
+      informatics-pipelines/informatics-pipelines
+      informatics-pipelines/wgts
 
-.. _oicr-gsi : https://github.com/oicr-gsi
+   .. toctree::
+      :maxdepth: 1
+      :caption: Data Review and Reporting
 
-.. _miso-lims : https://github.com/miso-lims
+      data-review-reporting/data-review-and-reporting
+      data-review-reporting/wgts-report
+      data-review-reporting/report-tips
 
+   .. toctree::
+      :maxdepth: 1
+      :caption: Software
 
-Contact us
------------
-
-Contact us through the Github issue tracker on any project.
-
-
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Accredited Pipelines
-
-   informatics-pipelines/informatics-pipelines
-   informatics-pipelines/assays
-   informatics-pipelines/wgts
-   informatics-pipelines/tar
-   informatics-pipelines/pwgs
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Data Review and Reporting
-
-   data-review-reporting/data-review-and-reporting
-   data-review-reporting/wgts-report
-   data-review-reporting/tar-report
-   data-review-reporting/plasma-report
-   data-review-reporting/report-tips
+      Requisition System <https://oicr-gsi.readthedocs.io/projects/requisition-system/stable>
+      infrastructure
 
 
-.. In most cases, we can use Intersphinx to link between the main project and the subproject
-.. But not in toctree. For some reason.
+.. only:: tar_build
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Research Use Only Pipelines
+   OICR Genomics TAR Pipeline documentation
+   ==========================================
 
-   ruo-pipelines/ruo-assays
+   .. toctree::
+      :maxdepth: 1
+      :caption: Accredited Pipelines
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Software
+      informatics-pipelines/informatics-pipelines
+      informatics-pipelines/tar
 
-   Requisition System <https://oicr-gsi.readthedocs.io/projects/requisition-system/stable>
-   infrastructure
+   .. toctree::
+      :maxdepth: 1
+      :caption: Data Review and Reporting
 
-+----------------+----------------------+
-| **Change Log** | `Github commit log`_ |
-+----------------+----------------------+
+      data-review-reporting/data-review-and-reporting
+      data-review-reporting/tar-report
+      data-review-reporting/report-tips
 
-.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/index.rst
+   .. toctree::
+      :maxdepth: 1
+      :caption: Software
 
+      Requisition System <https://oicr-gsi.readthedocs.io/projects/requisition-system/stable>
+      infrastructure
+
+
+.. only:: pwgs_build
+
+   OICR Genomics pWGS Pipeline documentation
+   ===========================================
+
+   .. toctree::
+      :maxdepth: 1
+      :caption: Accredited Pipelines
+
+      informatics-pipelines/informatics-pipelines
+      informatics-pipelines/pwgs
+
+   .. toctree::
+      :maxdepth: 1
+      :caption: Data Review and Reporting
+
+      data-review-reporting/data-review-and-reporting
+      data-review-reporting/plasma-report
+      data-review-reporting/report-tips
+
+   .. toctree::
+      :maxdepth: 1
+      :caption: Software
+
+      Requisition System <https://oicr-gsi.readthedocs.io/projects/requisition-system/stable>
+      infrastructure
+
+
+.. only:: not wgts_build and not tar_build and not pwgs_build
+
+   OICR Genome Sequence Informatics documentation
+   ===============================================
+
+   GSI is a team of bioinformaticians and software developers at `Ontario Institute for Cancer Research`_ that develop, maintain, and operate the core analysis infrastructure, analyze genomic data produced at the institute, and support collaborators and researchers with their bioinformatics analysis. To support these activities, we have developed a large suite of open-source software that can be found under our Github organizations: `oicr-gsi`_ and `miso-lims`_.
+
+
+   .. _Ontario Institute for Cancer Research: https://oicr.on.ca
+
+   .. _oicr-gsi : https://github.com/oicr-gsi
+
+   .. _miso-lims : https://github.com/miso-lims
+
+
+   Contact us
+   -----------
+
+   Contact us through the Github issue tracker on any project.
+
+
+
+   .. toctree::
+      :maxdepth: 1
+      :caption: Accredited Pipelines
+
+      informatics-pipelines/informatics-pipelines
+      informatics-pipelines/assays
+      informatics-pipelines/wgts
+      informatics-pipelines/tar
+      informatics-pipelines/pwgs
+
+   .. toctree::
+      :maxdepth: 1
+      :caption: Data Review and Reporting
+
+      data-review-reporting/data-review-and-reporting
+      data-review-reporting/wgts-report
+      data-review-reporting/tar-report
+      data-review-reporting/plasma-report
+      data-review-reporting/report-tips
+
+
+   .. In most cases, we can use Intersphinx to link between the main project and the subproject
+   .. But not in toctree. For some reason.
+
+   .. toctree::
+      :maxdepth: 1
+      :caption: Research Use Only Pipelines
+
+      ruo-pipelines/ruo-assays
+
+   .. toctree::
+      :maxdepth: 1
+      :caption: Software
+
+      Requisition System <https://oicr-gsi.readthedocs.io/projects/requisition-system/stable>
+      infrastructure
+
+   +----------------+----------------------+
+   | **Change Log** | `Github commit log`_ |
+   +----------------+----------------------+
+
+   .. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/index.rst
