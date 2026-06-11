@@ -24,12 +24,18 @@ Contact us through the Github issue tracker on any project.
 
    informatics-pipelines/informatics-pipelines
    informatics-pipelines/assays
-   
+   informatics-pipelines/wgts
+   informatics-pipelines/tar
+   informatics-pipelines/pwgs
+
 .. toctree::
    :maxdepth: 1
    :caption: Data Review and Reporting
 
    data-review-reporting/data-review-and-reporting
+   data-review-reporting/wgts-report
+   data-review-reporting/tar-report
+   data-review-reporting/plasma-report
    data-review-reporting/report-tips
 
 

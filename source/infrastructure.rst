@@ -77,7 +77,7 @@ Vidarr (2.0.3)
 
 Vidarr is an analysis provenance tracking server. It schedules workflows using a workflow engine like Cromwell workflow execution engine, collects the output from these workflows, and stores metadata about files and connections to Pinery LIMS information. Its primary components include a web service to track analysis, a command line interface for testing and development, and a base workflow engine (Cromwell), as well as tools for generating workflow definitions.
 
-Workflows are written in the WDL language and contain all the commands for running bioinformatics software (including fastq generation, alignment, variant calling, annotation and generation of QC metrics; see :numref:`wgs-pipeline` and :numref:`wts-pipeline` for flowchart of WGS and RNA bioinformatics workflows, respectively. See next section for details of the software components within WDLworkflows). Workflow runs and all associated files are tracked and recorded in Vidarr. This information is exposed as analysis provenance and used by the Provenance Client and Shesmu for automation.
+Workflows are written in the WDL language and contain all the commands for running bioinformatics software (including fastq generation, alignment, variant calling, annotation and generation of QC metrics; see the WGTS pipeline section for flowcharts of WGS and RNA bioinformatics workflows). Workflow runs and all associated files are tracked and recorded in Vidarr. This information is exposed as analysis provenance and used by the Provenance Client and Shesmu for automation.
 
 .. _whizbam_infra:
 

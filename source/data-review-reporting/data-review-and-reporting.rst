@@ -92,14 +92,7 @@ Generate and Interpret the Report
 
 Once a working directory has been set up, a report must be generated according to the assay listed in the requisition. Currently, Djerba supports the generation of clinical reports for the following assays: WGTS, TAR, and PWGS.
 
-The instructions for generating reports for each assay are documented below. An example command line session is included at the end of each section. 
-
-.. toctree::
-   :maxdepth: 2
-
-   wgts-report
-   tar-report
-   plasma-report
+The instructions for generating reports for each assay are documented in the following sections. An example command line session is included at the end of each section.
 
 
 
@@ -358,7 +351,7 @@ Failed TAR Reports
 
 If the targeted report fails any QC metrics or fails for another reason, a failed report must be submitted to the requisition system.
 
-To generate a failed report for TAR, fill out the following ini (see :ref:`tar-ini-config` for ini parameters)::
+To generate a failed report for TAR, fill out the following ini (see the TAR report for full ini parameter descriptions)::
 
     [core]
 
@@ -409,7 +402,7 @@ Failed pWGS Reports
 
 A failed report may be generated for this assay if:
 
-1. The distribution of insert sizes does not follow those outlined in :ref:`pwgs-qcs`, and/or
+1. The distribution of insert sizes does not follow those outlined in the pWGS report QC section, and/or
 2. The number of candidate SNVs is below 4000
 3. The WGTS report failed 
 
