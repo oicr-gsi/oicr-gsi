@@ -1,6 +1,6 @@
-.. |wgts-version| replace:: 6.0
-.. |tar-version| replace:: 4.0
-.. |pwgs-version| replace:: 3.0
+.. |wgts-version| replace:: 7.0
+.. |tar-version| replace:: 5.0
+.. |pwgs-version| replace:: 4.0
 
 .. |revolve-panel-paper| replace:: `Paper <https://doi.org/10.1158/1078-0432.CCR-23-0797>`__
 .. |revolve-panel-local| replace:: `Interval-files <https://bitbucket.oicr.on.ca/projects/GSI/repos/interval-files/browse/accredited/EVOLVE-CHARM.TS.hg38.bed>`__
