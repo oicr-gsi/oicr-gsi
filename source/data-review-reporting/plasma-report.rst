@@ -103,8 +103,12 @@ If the report passes all QC metrics and all information is present, the report i
 Continue to :ref:`Review the Draft Report` ➡️
 **********************************************
 
-+----------------+----------------------+
-| **Change Log** | `Github commit log`_ |
-+----------------+----------------------+
+Change Log
+=============================
+.. git_changelog:: 
+   :filename_filter: source/data-review-reporting/plasma-report.rst
+   :revisions: 1000
 
-.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/data-review-reporting/plasma-report.rst
+* `View detailed change log`_
+
+.. _View detailed change log :  https://github.com/oicr-gsi/oicr-gsi/commits/main/source/data-review-reporting/plasma-report.rst

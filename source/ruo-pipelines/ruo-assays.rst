@@ -38,3 +38,13 @@ sWGS Workflows and Software
    :file: software/swgs.csv
    :widths: 30, 30, 30, 30, 30
    :header-rows: 1
+
+Change Log
+=============================
+.. git_changelog:: 
+   :filename_filter: source/ruo-pipelines/ruo-assays.rst
+   :revisions: 1000
+
+* `View detailed change log`_
+
+.. _View detailed change log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/ruo-pipelines/ruo-assays.rst

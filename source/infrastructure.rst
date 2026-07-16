@@ -129,8 +129,12 @@ OICR’s high throughput computing cluster uses Univa_. Software packages are in
    :maxdepth: 2
 
 
-+----------------+----------------------+
-| **Change Log** | `Github commit log`_ |
-+----------------+----------------------+
+Change Log
+=============================
+.. git_changelog:: 
+   :filename_filter: source/infrastructure.rst
+   :revisions: 1000
 
-.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/infrastructure.rst
+* `View detailed change log`_
+
+.. _View detailed change log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/infrastructure.rst
