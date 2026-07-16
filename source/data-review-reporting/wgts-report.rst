@@ -419,7 +419,7 @@ Use the main djerba.py script in render mode, to generate revised PDF file::
 
 	$ djerba.py render -j report/report.updated.json -o report/ -p
 
-If necessary, the intermediate HTML file produced by Djerba may be also edited by hand. (This should only be done rarely, to resolve major formatting issues.) An HTML to PDF converter such as wkhtmltopdf_ may then be used to generate the PDF file. In this case, any subsequent edits by the clinical geneticist must be applied directly to the PDF, and not done with mini-Djerba.
+If necessary, the intermediate HTML file produced by Djerba may be also edited by hand. (This should only be done rarely, to resolve major formatting issues.) An HTML to PDF converter such as wkhtmltopdf_ may then be used to generate the PDF file. In this case, any subsequent edits by the clinical geneticist must be applied directly to the PDF.
 
 .. _wkhtmltopdf: https://wkhtmltopdf.org/
 
