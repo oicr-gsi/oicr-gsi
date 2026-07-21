@@ -475,11 +475,15 @@ Analytical Methodology Changes
 3. If OICR Genomics changes its analytical methodology to correct major errors or oversights that significantly impact the final genomic report, that information will be communicated to both previous and current clients. Affected clients will be emailed to inform them of the change and any effect this may have on their existing or future genomic reports.
 
 
-+----------------+----------------------+
-| **Change Log** | `Github commit log`_ |
-+----------------+----------------------+
+Change Log
+=============================
+.. git_changelog:: 
+   :filename_filter: source/data-review-reporting/data-review-and-reporting.rst
+   :revisions: 1000
 
-.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/data-review-reporting/data-review-and-reporting.rst
+* `View detailed change log`_
+
+.. _View detailed change log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/data-review-reporting/data-review-and-reporting.rst
 
 
 

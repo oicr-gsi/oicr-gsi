@@ -13,7 +13,7 @@ Djerba
 
 Djerba (https://github.com/oicr-gsi/djerba) is an in-house application used by CGI interpreters to create WGTS, pWGS and TAR reports and facilitate interpretation.
 
-Djerba_ is a command-line application, designed and written by CGI staff. Further documentation and technical guides for Djerba can be viewed on ReadTheDocs_. The Djerba software includes mini-Djerba, a standalone application with a subset of Djerba functions, which can be used to update clinical report documents; see TM-003 Geneticist Sample Review and Sign-Off Procedure.
+Djerba_ is a command-line application, designed and written by CGI staff. Further documentation and technical guides for Djerba can be viewed on ReadTheDocs_.
 
 MISO (1.14+)
 --------------
@@ -129,8 +129,12 @@ OICR’s high throughput computing cluster uses Univa_. Software packages are in
    :maxdepth: 2
 
 
-+----------------+----------------------+
-| **Change Log** | `Github commit log`_ |
-+----------------+----------------------+
+Change Log
+=============================
+.. git_changelog:: 
+   :filename_filter: source/infrastructure.rst
+   :revisions: 1000
 
-.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/infrastructure.rst
+* `View detailed change log`_
+
+.. _View detailed change log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/infrastructure.rst

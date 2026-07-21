@@ -160,8 +160,12 @@ The entire pipeline is automated and, in the ideal case, requires no human inter
 .. toctree::
    :maxdepth: 2
 
-+----------------+----------------------+
-| **Change Log** | `Github commit log`_ |
-+----------------+----------------------+
+Change Log
+=============================
+.. git_changelog:: 
+   :filename_filter: source/informatics-pipelines/informatics-pipelines.rst
+   :revisions: 1000
 
-.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/informatics-pipelines/informatics-pipelines.rst
+* `View detailed change log`_
+
+.. _View detailed change log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/informatics-pipelines/informatics-pipelines.rst

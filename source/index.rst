@@ -49,9 +49,13 @@ Contact us through the Github issue tracker on any project.
    Requisition System <https://oicr-gsi.readthedocs.io/projects/requisition-system/stable>
    infrastructure
 
-+----------------+----------------------+
-| **Change Log** | `Github commit log`_ |
-+----------------+----------------------+
+Change Log
+=============================
+.. git_changelog:: 
+   :filename_filter: source/index.rst
+   :revisions: 1000
 
-.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/index.rst
+* `View detailed change log`_
+
+.. _View detailed change log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/index.rst
 

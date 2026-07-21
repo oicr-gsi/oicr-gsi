@@ -371,9 +371,13 @@ The following is an example sequence of commands used to generate a clinical rep
 	$ djerba.py update -s report/results_summary.txt -j report/report.json -o report/ -p
 
 
-+----------------+----------------------+
-| **Change Log** | `Github commit log`_ |
-+----------------+----------------------+
+Change Log
+=============================
+.. git_changelog:: 
+   :filename_filter: source/data-review-reporting/tar-report.rst
+   :revisions: 1000
 
-.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/data-review-reporting/tar-report.rst
+* `View detailed change log`_
+
+.. _View detailed change log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/data-review-reporting/tar-report.rst
 

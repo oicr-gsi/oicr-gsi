@@ -190,8 +190,13 @@ More information about the analysis pipelines is available in the â€˜Procedureâ€
 .. toctree::
    :maxdepth: 2
 
-+----------------+----------------------+
-| **Change Log** | `Github commit log`_ |
-+----------------+----------------------+
+###########
+Change Log
+###########
+.. git_changelog:: 
+   :filename_filter: source/informatics-pipelines/assays.rst
+   :revisions: 1000
 
-.. _Github commit log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/informatics-pipelines/assays.rst
+* `View detailed change log`_
+
+.. _View detailed change log : https://github.com/oicr-gsi/oicr-gsi/commits/main/source/informatics-pipelines/assays.rst
