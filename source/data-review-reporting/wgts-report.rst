@@ -111,7 +111,14 @@ With the completed .ini, generate the interim report according to the following 
 
 	$ djerba.py report -i  my/path/config.ini -o /my/output/dir/ -p 
 
-Output filename is of the form ``${TUMOUR_ID}+${version}.html`` in the report directory.
+Output filename is of the form ``${TUMOUR_ID}+${version}.pdf`` in the report directory.
+
+Confirm Patient Study ID
+************************
+
+The INI parameter ``patient_study_id`` in the ``case_overview`` plugin is automatically populated from file provenance for WGTS reports. In rare cases, operator error can result in an incorrect Patient Study ID in MISO, which then propagates to file provenance. Therefore, the CGI interpreter checks the Patient Study ID in the interim report against the value in the requisition system. In the event of a mismatch, contact Tissue Portal staff so the value in MISO can be corrected.
+
+This does not apply to TAR and pWGS reports, in which CGI staff copy the Patient Study ID directly from the requisition system into the .ini configuration file.
 
 .. _wgts-ireport-review:
 
