@@ -196,8 +196,9 @@ Most results are reviewed within the interim report. Results reviewed by other m
 #. Review whizbam links for variants:
 
 	* All variant calls must be viewed to gauge whether they are confident and thus reportable or an artifact and thus must be removed.
-	* In general, if there are non-variant supporting reads in the normal, the variant is more likely to be an artifact. 
-	* Examples: :ref:`tar-whizbam-examples`
+	* In general, if there are non-variant supporting reads in the normal, the variant is more likely to be an artifact.
+	* If a variant call appears plausible, cross-check for potential artifacts by comparing with other samples: :ref:`tar-variant-cross-check`
+	* Further examples: :ref:`tar-whizbam-examples`
 
 .. _review the ichorCNA plot:
 
