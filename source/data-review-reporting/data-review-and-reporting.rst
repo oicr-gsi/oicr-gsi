@@ -391,7 +391,6 @@ To generate a failed report for TAR, fill out the following ini (see :ref:`tar-i
     failed = True 
     summary_file = results_summary.txt
     [tar.sample]
-    [supplement.header]
     [supplement.body]
     failed = True
 

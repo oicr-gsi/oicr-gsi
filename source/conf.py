@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'OICR Genome Sequence Informatics'
-copyright = '2025, Ontario Institute for Cancer Research'
+copyright = '2025-2026, Ontario Institute for Cancer Research. All rights reserved'
 author = 'GSI'
 version = '1.0'
 release = '1.0'

@@ -159,11 +159,23 @@ These are examples of CNV plots from ichorCNA for targeted reports.
 .. image:: images/ichor4.png
 	:width: 100%
 
+.. _tar-variant-cross-check:
+
+TAR variant cross-check
+########################
+
+TAR sequencing sometimes produces false positive variant calls in particular sequence contexts. If a call occurs in multiple, unrelated samples, it is likely to be an artifact rather than a true somatic variant.
+
+Therefore, if a variant call appears plausible on initial review of Whizbam plots, CGI interpreters cross-check the result against other donors. Accepted practice is to compare the sample in question with 8 other donors, which may be arbitrarily chosen from recent TAR cases. Interpreters check for presence of the variant in tumour and/or normal sequence, including at levels below the assay's limit of detection. If the variant is observed for most or all of the other donors, it may be deemed an artifact and removed from the report.
+
+Whizbam plots may be "stacked" across multiple samples for ease of comparison. For CHARM2 REVOLVE cases, the script `multibam_for_revolve.py🔒`_ can automatically generate an appropriate Whizbam link.
+
+.. _multibam_for_revolve.py🔒: https://github.com/oicr-gsi/djerba_prototypes/blob/main/scripts/multibam_for_revolve.py
 
 .. _json-tips:
 
 Working with JSON and Djerba
-##############################
+#############################
 
 It is helpful to use json tools to make editing the Djerba json easier::
 
@@ -173,7 +185,7 @@ It is helpful to use json tools to make editing the Djerba json easier::
 
 
 Change Log
-=============================
+#############################
 .. git_changelog:: 
    :filename_filter: source/data-review-reporting/report-tips.rst
    :revisions: 1000
