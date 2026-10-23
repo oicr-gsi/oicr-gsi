@@ -196,8 +196,14 @@ Most results are reviewed within the interim report. Results reviewed by other m
 #. Review whizbam links for variants:
 
 	* All variant calls must be viewed to gauge whether they are confident and thus reportable or an artifact and thus must be removed.
-	* In general, if there are non-variant supporting reads in the normal, the variant is more likely to be an artifact.
-	* If a variant call appears plausible, cross-check for potential artifacts by comparing with other samples: :ref:`tar-variant-cross-check`
+	* In general, if there are variant-supporting reads in the normal, the variant is more likely to be an artifact. This remains true even when the normal has fewer than five supporting reads, as the automated normal filter only removes calls with more than four supporting reads.
+	* For variants meeting any of the :ref:`tar-extended-review-criteria`, also check for pseudogene-derived artifacts:
+
+	  * Sort reads by base at the variant position and inspect the alternate-supporting reads.
+	  * Check for hollow (MAPQ 0) alternate reads. Predominantly hollow alternate support suggests a pseudogene-derived artifact.
+	  * Enable display of soft-clipped bases and check whether the alternate reads are clipped at exon boundaries.
+
+	* If a variant call appears plausible, or meets any of the :ref:`tar-extended-review-criteria`, cross-check for potential artifacts by comparing with other samples: :ref:`tar-variant-cross-check`
 	* Further examples: :ref:`tar-whizbam-examples`
 
 .. _review the ichorCNA plot:
@@ -281,7 +287,30 @@ Most results are reviewed within the interim report. Results reviewed by other m
 			- * All level 1-4, R variants which pass the above criteria
 			  * All “Oncogenic”, “Likely Oncogenic” and “Predicted Oncogenic” alterations which pass the above criteria
 
+	
 	* Review all actionable and/or oncogenic mutations using Whizbam links for alignment artifacts. Whizbam links can be navigated to by clicking the link in the rightmost column in the ``data_mutations_extended_oncogenic.txt`` file in the patient's ``report`` directory.  Alterations which are deemed artifacts are to be removed from the JSON file and recorded on the relevant JIRA ticket.
+	* Some TAR genes have pseudogenes with near-identical sequence. Reads from a pseudogene can align to the parent gene and produce false positive calls, sometimes with high mapping quality. Check each actionable and/or oncogenic variant against the criteria below, using the columns of ``data_mutations_extended_oncogenic.txt``. Variants meeting any criterion require the additional Whizbam checks and the :ref:`tar-variant-cross-check` described above. Record which criteria applied and the outcome of the review.
+
+	  .. _tar-extended-review-criteria:
+
+	  .. list-table:: Extended review criteria
+	     :widths: 40 60
+	     :header-rows: 1
+
+	     * - Criterion
+	       - How to check
+	     * - Gene or region with a documented pseudogene
+	       - * **PMS2** exons 1–5, 9 and 11–15 (``EXON`` column)
+	         * **NF1**, any exon
+	         * **BRCA1** exons 1–2 and adjacent introns
+	     * - No duplex support
+	       - ``set`` column is ``mutect2-sscsSc`` (called in single-strand consensus only)
+	     * - Filtered in one consensus partition
+	       - ``set`` column contains ``filterIn``
+	     * - Low alternate mapping quality
+	       - A second MMQ value (median mapping quality of reads supporting the alternate allele) in the range ``30 <= MMQ < 60`` indicates partially ambiguous mapping, potentially due to pseudogenes or other homologous sequences.
+	     
+
 	* Dinucleotide substitutions which are represented as two individual mutations are to be merged. Merged variants should be recorded in a new file named ``data_mutations_merged.txt``. Copy both original individual annotations to this file, along with a third record of the final merged variant. To perform this merge, please follow this step-by-step procedure in the `Merging and Annotating Mutations Representing the Same Event🔒`_ document on CGI:How-to wiki page.
 
 .. _Merging and Annotating Mutations Representing the Same Event🔒 : https://wiki.oicr.on.ca/spaces/GSI/pages/293634774/Merging+and+Annotating+Mutations+Representing+the+Same+Event
