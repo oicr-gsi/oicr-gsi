@@ -168,6 +168,8 @@ TAR sequencing sometimes produces false positive variant calls in particular seq
 
 Therefore, if a variant call appears plausible on initial review of Whizbam plots, CGI interpreters cross-check the result against other donors. Accepted practice is to compare the sample in question with 8 other donors, which may be arbitrarily chosen from recent TAR cases. Interpreters check for presence of the variant in tumour and/or normal sequence, including at levels below the assay's limit of detection. If the variant is observed for most or all of the other donors, it may be deemed an artifact and removed from the report.
 
+Cross-checking is required for all variants meeting any of the :ref:`tar-extended-review-criteria`. 
+
 Whizbam plots may be "stacked" across multiple samples for ease of comparison. For CHARM2 REVOLVE cases, the script `multibam_for_revolve.py🔒`_ can automatically generate an appropriate Whizbam link.
 
 .. _multibam_for_revolve.py🔒: https://github.com/oicr-gsi/djerba_prototypes/blob/main/scripts/multibam_for_revolve.py
