@@ -290,6 +290,7 @@ Most results are reviewed within the interim report. Results reviewed by other m
 	
 	* Review all actionable and/or oncogenic mutations using Whizbam links for alignment artifacts. Whizbam links can be navigated to by clicking the link in the rightmost column in the ``data_mutations_extended_oncogenic.txt`` file in the patient's ``report`` directory.  Alterations which are deemed artifacts are to be removed from the JSON file and recorded on the relevant JIRA ticket.
 	* Some TAR genes have pseudogenes with near-identical sequence. Reads from a pseudogene can align to the parent gene and produce false positive calls, sometimes with high mapping quality. Check each actionable and/or oncogenic variant against the criteria below, using the columns of ``data_mutations_extended_oncogenic.txt``. Variants meeting any criterion require the additional Whizbam checks and the :ref:`tar-variant-cross-check` described above. Record which criterion applied and the outcome of the review on the relevant JIRA ticket.
+
 	  .. _tar-extended-review-criteria:
 
 	  .. list-table:: Extended review criteria
