@@ -5,6 +5,6 @@ star
 starfusion
 rnaseqqc
 arriba
-mavis
+mavis3
 rsem
 crosscheckFingerprintsCollector
