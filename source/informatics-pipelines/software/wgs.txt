@@ -11,7 +11,7 @@ crosscheckFingerprintsCollector
 delly
 variantEffectPredictor
 mutect2
-mavis
+mavis3
 msisensor
 hrDetect
 gridss
